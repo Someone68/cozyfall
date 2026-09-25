@@ -1,7 +1,7 @@
 extends Node2D
 @onready var level = owner
 const TILE := 8
-const MAX_TEMPERATURE := 5
+const MAX_TEMPERATURE := 6
 var grid_pos: Vector2i
 var moving := false
 var temperature := 5
