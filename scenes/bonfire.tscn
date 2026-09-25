@@ -52,5 +52,5 @@ position = Vector2(0, -7)
 sprite_frames = SubResource("SpriteFrames_1eln1")
 animation = &"lit"
 autoplay = "lit"
-frame_progress = 0.024765266
+frame_progress = 0.46631652
 centered = false
