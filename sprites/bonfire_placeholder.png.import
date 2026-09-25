@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://46alj8q54qfw"
-path="res://.godot/imported/rabbit_spritesheet_withjump.png-3ed68fdaf2949efec3ff01f65a22bffd.ctex"
+uid="uid://bdr2ws5ltrsn5"
+path="res://.godot/imported/bonfire_placeholder.png-abcb7ed3c2101f3e12316ade78c3b002.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/rabbit_spritesheet_withjump.png"
-dest_files=["res://.godot/imported/rabbit_spritesheet_withjump.png-3ed68fdaf2949efec3ff01f65a22bffd.ctex"]
+source_file="res://sprites/bonfire_placeholder.png"
+dest_files=["res://.godot/imported/bonfire_placeholder.png-abcb7ed3c2101f3e12316ade78c3b002.ctex"]
 
 [params]
 

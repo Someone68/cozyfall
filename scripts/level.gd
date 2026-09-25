@@ -17,5 +17,5 @@ func move_player(dir: Vector2i) -> bool:
 	player.grid_pos = target
 	player.animate_to(target * TILE)
 	if floors.has(target):
-		floors[target].on_enter()
+		floors[target].on_enter(player)
 	return true
