@@ -1,9 +1,10 @@
 extends Node2D
-var grid_pos: Vector2i
-var moving := false
 @onready var level = owner
 const TILE := 8
-const temperature := 5
+const MAX_TEMPERATURE := 5
+var grid_pos: Vector2i
+var moving := false
+var temperature := 5
 
 func handle_movement():
 	if moving: return
@@ -13,9 +14,10 @@ func handle_movement():
 	elif Input.is_action_just_pressed("ui_up"): dir = Vector2i.UP
 	elif Input.is_action_just_pressed("ui_down"): dir = Vector2i.DOWN
 	if dir != Vector2i.ZERO:
+		print(temperature)
 		#level.save_state()
-		if not level.move_player(dir):
-			pass
+		if level.move_player(dir):
+			temperature -= 1
 
 func _process(_delta: float):
 	handle_movement()
