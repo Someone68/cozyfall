@@ -50,6 +50,6 @@ text = "restart"
 
 [node name="Quit" type="Label" parent="VBoxContainer/SelectMenu" unique_id=1356101942]
 layout_mode = 2
-text = "quit"
+text = "quit to title"
 
 [connection signal="item_selected" from="VBoxContainer/SelectMenu" to="." method="_on_select_menu_item_selected"]
