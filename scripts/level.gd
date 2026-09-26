@@ -4,6 +4,7 @@ const TILE := 8
 const MAX_TEMP := 8
 const ADJ_DIRS := [Vector2i(1, 0), Vector2i(-1, 0), Vector2i(0, 1), Vector2i(0, -1)]
 @export var DEATH_SCREEN : PackedScene
+@export var ESCAPE_SCREEN : PackedScene
 
 @onready var walls := $Walls
 @onready var player := $Player
@@ -12,6 +13,10 @@ var floors := {}
 var bonfires := {}
 var on_bonfire := false
 
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_close_dialog"):
+		var loaded_escape_screen = ESCAPE_SCREEN.instantiate()
+		add_child(loaded_escape_screen)
 
 func death():
 	var loaded_death_screen = DEATH_SCREEN.instantiate()
