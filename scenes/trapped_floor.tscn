@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://db3v2cdf2btf2"]
+
+[ext_resource type="Script" uid="uid://dtgl26h1rd6xy" path="res://scripts/trapped_floor.gd" id="1_25wkb"]
+[ext_resource type="Texture2D" uid="uid://0mjjscpdleo0" path="res://sprites/spikes.png" id="1_dooj0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_25wkb"]
+atlas = ExtResource("1_dooj0")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5i53w"]
+atlas = ExtResource("1_dooj0")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1eln1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_25wkb")
+}],
+"loop": 0,
+"name": &"off",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5i53w")
+}],
+"loop": 0,
+"name": &"on",
+"speed": 5.0
+}]
+
+[node name="TrappedFloor" type="Node2D" unique_id=1015944532]
+script = ExtResource("1_25wkb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=138971267]
+sprite_frames = SubResource("SpriteFrames_1eln1")
+animation = &"off"
+centered = false

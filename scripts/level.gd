@@ -67,6 +67,11 @@ func move_player(dir: Vector2i) -> bool:
 	var target = player.grid_pos + dir
 	if not can_occupy(target): return false
 	if is_wall(target) or solids.has(target) or bonfires.has(target): return false
+	if floors.has(player.grid_pos):
+		var f = floors[player.grid_pos]
+		get_tree().create_timer(0.3).timeout.connect(func():
+			if is_instance_valid(f) and f.has_method("on_leave"):
+				f.on_leave(player))
 	player.grid_pos = target
 	player.animate_to(target * TILE)
 	return true

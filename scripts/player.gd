@@ -30,10 +30,10 @@ func play_anim(suffix: String = ""):
 	$AnimatedSprite2D.flip_h = direction.x == -1
 	$AnimatedSprite2D.play(anim + suffix)
 
-func die():
+func die(spike := false):
 	print("die")
 	dead = true
-	$AnimatedSprite2D.play("die")
+	$AnimatedSprite2D.play("die" + ("_spike" if spike else ""))
 	await $AnimatedSprite2D.animation_finished
 	print("dead")
 	level.death()

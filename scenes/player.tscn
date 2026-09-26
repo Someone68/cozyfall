@@ -103,6 +103,50 @@ region = Rect2(0, 140, 8, 14)
 atlas = ExtResource("2_g2els")
 region = Rect2(8, 140, 8, 14)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_oxcmq"]
+atlas = ExtResource("2_g2els")
+region = Rect2(8, 154, 8, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wylla"]
+atlas = ExtResource("2_g2els")
+region = Rect2(16, 154, 8, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a3eqm"]
+atlas = ExtResource("2_g2els")
+region = Rect2(24, 154, 8, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_plx2b"]
+atlas = ExtResource("2_g2els")
+region = Rect2(32, 154, 8, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3capk"]
+atlas = ExtResource("2_g2els")
+region = Rect2(40, 154, 8, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kg5hq"]
+atlas = ExtResource("2_g2els")
+region = Rect2(48, 154, 8, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kp0if"]
+atlas = ExtResource("2_g2els")
+region = Rect2(56, 154, 8, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2xkbm"]
+atlas = ExtResource("2_g2els")
+region = Rect2(64, 154, 8, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqoq3"]
+atlas = ExtResource("2_g2els")
+region = Rect2(72, 154, 8, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y8tjj"]
+atlas = ExtResource("2_g2els")
+region = Rect2(80, 154, 8, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ptwb"]
+atlas = ExtResource("2_g2els")
+region = Rect2(88, 154, 8, 14)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_dqkch"]
 atlas = ExtResource("2_g2els")
 region = Rect2(8, 0, 8, 14)
@@ -559,6 +603,44 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_oxcmq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wylla")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a3eqm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_plx2b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3capk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kg5hq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kp0if")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2xkbm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dqoq3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y8tjj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ptwb")
+}],
+"loop": 0,
+"name": &"die_spike",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_dqkch")
 }, {
 "duration": 1.0,
@@ -903,7 +985,9 @@ script = ExtResource("1_g2els")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1099299]
 position = Vector2(4, 0)
 sprite_frames = SubResource("SpriteFrames_fsrav")
-animation = &"right_idle"
+animation = &"die"
+frame = 24
+frame_progress = 1.0
 
 [node name="MovementCooldown" type="Timer" parent="." unique_id=1586735100]
 wait_time = 0.3

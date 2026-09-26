@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://do7adl6xvfmtn"]
+
+[ext_resource type="Script" uid="uid://cngj01iy51g5l" path="res://scripts/spiked_floor.gd" id="1_jgvk1"]
+[ext_resource type="Texture2D" uid="uid://0mjjscpdleo0" path="res://sprites/spikes.png" id="1_lipek"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jgvk1"]
+atlas = ExtResource("1_lipek")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1eln1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jgvk1")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="SpikedFloor" type="Node2D" unique_id=1469428373]
+script = ExtResource("1_jgvk1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=23396634]
+sprite_frames = SubResource("SpriteFrames_1eln1")
+centered = false

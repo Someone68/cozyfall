@@ -8,3 +8,6 @@ func _ready():
 
 func on_enter(player: Node2D):
 	pass
+
+func on_leave(player: Node2D):
+	pass
