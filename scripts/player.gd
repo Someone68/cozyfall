@@ -39,11 +39,12 @@ func die(spike := false):
 	level.death()
 	queue_free()
 
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("tunnel"):
+		tunnel()
+
 func handle_movement():
 	if dead or move_cooldown or tunneling: return
-	if Input.is_action_just_pressed("tunnel"):
-		tunnel()
-		return true
 	var dir := Vector2i.ZERO
 	if can_move == "x" or can_move == "all":
 		if Input.is_action_just_pressed("ui_right"): dir = Vector2i.RIGHT
