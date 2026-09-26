@@ -4,7 +4,10 @@ const TILE := 8
 const MAX_TEMP := 8
 const ADJ_DIRS := [Vector2i(1, 0), Vector2i(-1, 0), Vector2i(0, 1), Vector2i(0, -1)]
 @export var DEATH_SCREEN : PackedScene
+@export var WIN_SCREEN : PackedScene
 @export var ESCAPE_SCREEN : PackedScene
+@export var TUNNELING_ENABLED := true
+@export var TEMPERATURE_ENABLED := true
 
 @onready var walls := $Walls
 @onready var player := $Player
@@ -27,6 +30,7 @@ func tile_temp_cost(pos: Vector2i) -> int:
 	return 1
 
 func is_tunnelable(pos: Vector2i) -> bool:
+	if (!TUNNELING_ENABLED): return false
 	var f = floors.get(pos)
 	return not (f and "no_tunnel" in f and f.no_tunnel)
 
@@ -75,6 +79,20 @@ func move_player(dir: Vector2i) -> bool:
 	player.grid_pos = target
 	player.animate_to(target * TILE)
 	return true
+
+func level_complete():
+	var loaded_win_screen = WIN_SCREEN.instantiate()
+	get_tree().paused = true
+	var t = get_tree().create_tween()
+	t.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+	t.set_ease(Tween.EASE_OUT)
+	t.tween_property($WhiteFade, "modulate:a", 1.0, 0.5)
+	t.tween_callback(func():
+		add_child(loaded_win_screen)
+		loaded_win_screen.fade_in()
+	)
+	t.tween_property($WhiteFade, "modulate:a", 0.0, 1)
+	
 
 func _on_player_arrived():
 	var pos = player.grid_pos

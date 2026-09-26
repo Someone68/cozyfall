@@ -84,6 +84,7 @@ func tunnel():
 		move_finished.emit()
 
 func after_move():
+	if (!level.TEMPERATURE_ENABLED): return
 	if !level.on_bonfire:
 		temperature -= level.tile_temp_cost(grid_pos)
 	if temperature < 0:
