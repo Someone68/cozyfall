@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://qcllx1lqfgx4"]
+
+[ext_resource type="Texture2D" uid="uid://dqj14y2e5lntq" path="res://sprites/door_placeholder.png" id="1_hpvv5"]
+[ext_resource type="Script" uid="uid://dcokmuaqlpe0d" path="res://scripts/door.gd" id="1_uvdjg"]
+
+[node name="Door" type="Node2D" unique_id=442602330]
+script = ExtResource("1_uvdjg")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=98184033]
+texture = ExtResource("1_hpvv5")
+centered = false

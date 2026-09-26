@@ -20,6 +20,18 @@ func is_wall(pos: Vector2i):
 	return not Rect2i(Vector2i.ZERO, SIZE).has_point(pos) \
 		or walls.get_cell_source_id(pos) != -1
 
+func open_door(id) -> void:
+	var to_open := []
+	for pos in solids:
+		var solid = solids[pos]
+		if is_instance_valid(solid) and "id" in solid and solid.id == id:
+			to_open.append(pos)
+	for pos in to_open:
+		var door = solids[pos]
+		solids.erase(pos)
+		if door.has_method("open"):
+			door.open()
+
 func move_player(dir: Vector2i) -> bool:
 	var target = player.grid_pos + dir
 	if is_wall(target) or solids.has(target) or bonfires.has(target): return false
