@@ -163,14 +163,17 @@ centered = false
 [node name="Button" parent="." unique_id=1875483585 instance=ExtResource("8_b121j")]
 position = Vector2(32, 40)
 door_id = "testdoor"
+variant = 1
 
 [node name="Door" parent="." unique_id=442602330 instance=ExtResource("9_8c41q")]
 position = Vector2(24, 40)
 id = "testdoor"
+variant = 1
 
 [node name="Door2" parent="." unique_id=1773783629 instance=ExtResource("9_8c41q")]
 position = Vector2(24, 48)
 id = "testdoor"
+variant = 1
 
 [node name="Ice" parent="." unique_id=1879288839 instance=ExtResource("10_olg7q")]
 position = Vector2(16, 24)
