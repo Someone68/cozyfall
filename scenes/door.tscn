@@ -40,8 +40,10 @@ animations = [{
 }]
 
 [node name="Door" type="Node2D" unique_id=442602330]
+z_index = 1
 script = ExtResource("1_uvdjg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=14670484]
+position = Vector2(0, -2)
 sprite_frames = SubResource("SpriteFrames_1eln1")
 centered = false

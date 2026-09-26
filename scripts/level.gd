@@ -82,6 +82,7 @@ func move_player(dir: Vector2i) -> bool:
 
 func level_complete():
 	var loaded_win_screen = WIN_SCREEN.instantiate()
+	$WhiteFade.visible = true
 	get_tree().paused = true
 	var t = get_tree().create_tween()
 	t.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)

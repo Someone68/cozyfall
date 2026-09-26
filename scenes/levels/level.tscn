@@ -146,6 +146,7 @@ animation = &"normal"
 centered = false
 
 [node name="WhiteFade" type="ColorRect" parent="." unique_id=1353560723]
+visible = false
 modulate = Color(1, 1, 1, 0)
 z_index = 5
 offset_right = 96.0
