@@ -44,7 +44,4 @@ layout_mode = 2
 text = "quit game"
 horizontal_alignment = 1
 
-[node name="Control" type="Control" parent="." unique_id=1714821118]
-layout_mode = 2
-
 [connection signal="item_selected" from="VBoxContainer/SelectMenu" to="." method="_on_select_menu_item_selected"]

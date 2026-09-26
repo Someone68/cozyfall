@@ -7,6 +7,7 @@ signal item_selected(index: int, item: Control)
 @export var highlight_color := Color(0.965, 0.82, 0.0, 1.0)
 @export var wrap_around := true
 @export var prefix := "> "
+@export var spaces := "   "
 
 var index := 0
 
@@ -41,4 +42,5 @@ func _refresh():
 	var items := _items()
 	for i in items.size():
 		items[i].modulate = highlight_color if i == index else normal_color
-		items[i].text = "> " + items[i].text if i == index else items[i].text.trim_prefix(prefix)
+		items[i].text = "> " + items[i].text.trim_prefix(spaces).trim_suffix(spaces) + spaces if i == index \
+		else spaces + items[i].text.trim_prefix(prefix).trim_prefix(spaces).trim_suffix(spaces) + spaces
