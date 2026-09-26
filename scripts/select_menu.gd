@@ -41,6 +41,9 @@ func _move(dir: int, count: int):
 	_refresh()
 
 func _refresh():
+	$Timer.start(0.3)
+	$Timer.set_wait_time(1)
+	alternate_prefix = false
 	var items := _items()
 	for i in items.size():
 		items[i].modulate = highlight_color if i == index else normal_color
