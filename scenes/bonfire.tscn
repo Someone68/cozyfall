@@ -45,6 +45,7 @@ animations = [{
 }]
 
 [node name="Bonfire" type="Node2D" unique_id=1475972330]
+z_index = 1
 script = ExtResource("1_xk3wp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=206310271]
