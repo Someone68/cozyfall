@@ -1,4 +1,5 @@
 extends Node2D
+signal move_finished
 @export_enum("north", "west", "east", "south") var starting_direction : String
 @onready var level = owner
 const TILE := 8
@@ -9,6 +10,7 @@ var temperature := 8
 var direction: Vector2i
 var dead := false
 var move_cooldown := false
+var tunneling := false
 
 func _ready() -> void:
 	grid_pos = Vector2i(position / level.TILE)
@@ -38,7 +40,10 @@ func die():
 	queue_free()
 
 func handle_movement():
-	if (dead or move_cooldown): return
+	if dead or move_cooldown or tunneling: return
+	if Input.is_action_just_pressed("tunnel"):
+		tunnel()
+		return true
 	var dir := Vector2i.ZERO
 	if can_move == "x" or can_move == "all":
 		if Input.is_action_just_pressed("ui_right"): dir = Vector2i.RIGHT
@@ -47,23 +52,40 @@ func handle_movement():
 		if Input.is_action_just_pressed("ui_up"): dir = Vector2i.UP
 		if Input.is_action_just_pressed("ui_down"): dir = Vector2i.DOWN
 	if dir != Vector2i.ZERO:
+		if not level.can_occupy(grid_pos + dir): return false
 		direction = dir
 		play_anim()
 		#level.save_state()
 		move_cooldown = true
 		$MovementCooldown.start()
-		if level.move_player(dir):
-			if !level.on_bonfire:
-				temperature -= 1
-			if temperature < 0:
-				die()
-				return
-			level.set_statusbar(temperature)
-		else:
-			play_anim("_idle")
+		level.move_player(dir)
 		return true
 	return false
-		
+
+func tunnel():
+	if dead or tunneling or can_move != "all": return
+	tunneling = true
+	play_anim("_tunnel_in")
+	await $AnimatedSprite2D.animation_finished
+	var target := grid_pos + direction * 3
+	var moved: bool = level.can_occupy(target)
+	if moved:
+		grid_pos = target
+		position = Vector2(target * TILE)
+	play_anim("_tunnel_out")
+	await $AnimatedSprite2D.animation_finished
+	tunneling = false
+	play_anim("_idle")
+	if moved:
+		move_finished.emit()
+
+func after_move():
+	if !level.on_bonfire:
+		temperature -= 1
+	if temperature < 0:
+		die()
+		return
+	level.set_statusbar(temperature)
 
 func _process(_delta: float):
 	handle_movement()
@@ -82,7 +104,8 @@ func animate_to(px: Vector2):
 	t.tween_property(self, "position", px, dur)
 	t.finished.connect(func():
 		can_move = "all"
-		play_anim("_idle"))
+		play_anim("_idle")
+		move_finished.emit())
 
 func _on_movement_cooldown_timeout() -> void:
 	move_cooldown = false
