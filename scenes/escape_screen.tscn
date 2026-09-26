@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://1u83hvqbuw1"]
 
 [ext_resource type="Theme" uid="uid://cdv0csb0dp43j" path="res://themes/menu_theme.tres" id="1_gjwmd"]
-[ext_resource type="Script" uid="uid://bnq1v80v63bd1" path="res://scenes/escape_screen.gd" id="2_gjwmd"]
+[ext_resource type="Script" uid="uid://bnq1v80v63bd1" path="res://scripts/escape_screen.gd" id="2_gjwmd"]
 [ext_resource type="PackedScene" uid="uid://b3ywq4cn53b52" path="res://scenes/select_menu.tscn" id="3_a2a6c"]
+[ext_resource type="PackedScene" uid="uid://benrrbluvikv8" path="res://scenes/warn.tscn" id="3_k22dc"]
 
 [node name="EscapeScreen" type="Control" unique_id=128950255]
 process_mode = 3
@@ -15,6 +16,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_gjwmd")
 script = ExtResource("2_gjwmd")
+WARN_SCREEN = ExtResource("3_k22dc")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1687184408]
 layout_mode = 0
