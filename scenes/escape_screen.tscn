@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://1u83hvqbuw1"]
+
+[ext_resource type="Theme" uid="uid://cdv0csb0dp43j" path="res://themes/menu_theme.tres" id="1_gjwmd"]
+[ext_resource type="Script" uid="uid://bnq1v80v63bd1" path="res://scenes/escape_screen.gd" id="2_gjwmd"]
+[ext_resource type="PackedScene" uid="uid://b3ywq4cn53b52" path="res://scenes/select_menu.tscn" id="3_a2a6c"]
+
+[node name="EscapeScreen" type="Control" unique_id=128950255]
+process_mode = 3
+z_index = 10
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_gjwmd")
+script = ExtResource("2_gjwmd")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1687184408]
+layout_mode = 0
+offset_right = 96.0
+offset_bottom = 96.0
+color = Color(0, 0, 0, 0.69803923)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1188982227]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 88.0
+offset_bottom = 88.0
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1437285927]
+layout_mode = 2
+text = "Options"
+horizontal_alignment = 1
+
+[node name="SelectMenu" parent="VBoxContainer" unique_id=647501129 instance=ExtResource("3_a2a6c")]
+layout_mode = 2
+
+[node name="BackToGame" type="Label" parent="VBoxContainer/SelectMenu" unique_id=284757862]
+layout_mode = 2
+text = "back to game"
+
+[node name="Restart" type="Label" parent="VBoxContainer/SelectMenu" unique_id=58015726]
+layout_mode = 2
+text = "restart"
+
+[node name="Quit" type="Label" parent="VBoxContainer/SelectMenu" unique_id=1298591346]
+layout_mode = 2
+text = "quit to title"
+
+[connection signal="item_selected" from="VBoxContainer/SelectMenu" to="." method="_on_select_menu_item_selected"]

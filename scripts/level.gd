@@ -15,10 +15,11 @@ var floors := {}
 var bonfires := {}
 var on_bonfire := false
 
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_close_dialog"):
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_close_dialog") and !has_node("EscapeScreen"):
 		var loaded_escape_screen = ESCAPE_SCREEN.instantiate()
 		add_child(loaded_escape_screen)
+		get_tree().paused = true
 
 func tile_temp_cost(pos: Vector2i) -> int:
 	var f = floors.get(pos)
