@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://7t5f6535bd8q"]
+
+[ext_resource type="Script" uid="uid://o3h75lml5gj0" path="res://scripts/ice.gd" id="1_hdoyw"]
+[ext_resource type="Texture2D" uid="uid://dyyvy4cam8yqb" path="res://sprites/ice.png" id="1_loxpn"]
+
+[node name="Ice" type="Node2D" unique_id=1879288839]
+script = ExtResource("1_hdoyw")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=44178271]
+texture = ExtResource("1_loxpn")
+centered = false
