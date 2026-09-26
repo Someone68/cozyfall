@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://dpe56p1o5di7a"]
+
+[ext_resource type="FontFile" uid="uid://cb823j3rpi72o" path="res://fonts/Tiny5-Regular.ttf" id="1_uyutr"]
+[ext_resource type="Script" uid="uid://bj1l3eywjtgxf" path="res://scripts/death_screen.gd" id="2_mqh5l"]
+[ext_resource type="PackedScene" uid="uid://b3ywq4cn53b52" path="res://scenes/select_menu.tscn" id="3_7ns25"]
+
+[sub_resource type="Theme" id="Theme_1eln1"]
+default_font = ExtResource("1_uyutr")
+default_font_size = 8
+
+[node name="DeathScreen" type="Control" unique_id=128950255]
+z_index = 10
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_1eln1")
+script = ExtResource("2_mqh5l")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1687184408]
+layout_mode = 0
+offset_right = 96.0
+offset_bottom = 96.0
+color = Color(0, 0, 0, 0.69803923)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1188982227]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 88.0
+offset_bottom = 88.0
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1437285927]
+layout_mode = 2
+text = "you can do better..."
+horizontal_alignment = 1
+
+[node name="SelectMenu" parent="VBoxContainer" unique_id=647501129 instance=ExtResource("3_7ns25")]
+layout_mode = 2
+
+[node name="TryAgain" type="Label" parent="VBoxContainer/SelectMenu" unique_id=284757862]
+layout_mode = 2
+text = "try again!"
+
+[node name="Quit" type="Label" parent="VBoxContainer/SelectMenu" unique_id=1298591346]
+layout_mode = 2
+text = "quit..."
+
+[connection signal="item_selected" from="VBoxContainer/SelectMenu" to="." method="_on_select_menu_item_selected"]
