@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://c0q6qq7236nwx"]
+
+[ext_resource type="FontFile" uid="uid://cb823j3rpi72o" path="res://fonts/Tiny5-Regular.ttf" id="1_ekxnf"]
+[ext_resource type="Texture2D" uid="uid://c6ce7gf36vi3j" path="res://sprites/title_placeholder.png" id="2_bqqt6"]
+[ext_resource type="Script" uid="uid://dofm4sk6amm4w" path="res://scenes/main_menu.gd" id="2_wu84c"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wu84c"]
+bg_color = Color(1.1551381e-06, 0.6332436, 0.9658362, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ln24"]
+bg_color = Color(1.1551381e-06, 0.6332436, 0.9658362, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rtw2f"]
+bg_color = Color(0.2648754, 0.6976188, 0.9999998, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qkeb6"]
+bg_color = Color(1.1551381e-06, 0.6332436, 0.9658362, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oa1go"]
+bg_color = Color(3.85046e-07, 0.34457612, 0.53862804, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="Theme" id="Theme_fsrav"]
+default_font = ExtResource("1_ekxnf")
+Button/font_sizes/font_size = 8
+Button/styles/disabled = SubResource("StyleBoxFlat_wu84c")
+Button/styles/focus = SubResource("StyleBoxFlat_8ln24")
+Button/styles/hover = SubResource("StyleBoxFlat_rtw2f")
+Button/styles/normal = SubResource("StyleBoxFlat_qkeb6")
+Button/styles/pressed = SubResource("StyleBoxFlat_oa1go")
+
+[node name="MainMenu" type="MarginContainer" unique_id=1471543239]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_fsrav")
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 8
+script = ExtResource("2_wu84c")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=908047947]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer" unique_id=463689465]
+layout_mode = 2
+texture = ExtResource("2_bqqt6")
+
+[node name="StartButton" type="Button" parent="VBoxContainer" unique_id=1246950166]
+layout_mode = 2
+text = "Start"
+
+[node name="Settings" type="Button" parent="VBoxContainer" unique_id=1126291130]
+layout_mode = 2
+text = "Settings"
+
+[node name="Quit" type="Button" parent="VBoxContainer" unique_id=1934703196]
+layout_mode = 2
+text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

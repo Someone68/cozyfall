@@ -3,7 +3,7 @@ extends Node2D
 const TILE := 8
 const MAX_TEMPERATURE := 9
 var grid_pos: Vector2i
-var moving := false
+var can_move := "all"
 var temperature := 8
 var direction: Vector2i
 
@@ -15,12 +15,13 @@ func play_anim(suffix: String = ""):
 	$AnimatedSprite2D.play(anim + suffix)
 
 func handle_movement():
-	if moving: return false
 	var dir := Vector2i.ZERO
-	if Input.is_action_just_pressed("ui_right"): dir = Vector2i.RIGHT
-	elif Input.is_action_just_pressed("ui_left"): dir = Vector2i.LEFT
-	elif Input.is_action_just_pressed("ui_up"): dir = Vector2i.UP
-	elif Input.is_action_just_pressed("ui_down"): dir = Vector2i.DOWN
+	if can_move == "x" or can_move == "all":
+		if Input.is_action_just_pressed("ui_right"): dir = Vector2i.RIGHT
+		if Input.is_action_just_pressed("ui_left"): dir = Vector2i.LEFT
+	if can_move == "y" or can_move == "all":
+		if Input.is_action_just_pressed("ui_up"): dir = Vector2i.UP
+		if Input.is_action_just_pressed("ui_down"): dir = Vector2i.DOWN
 	if dir != Vector2i.ZERO:
 		direction = dir
 		#level.save_state()
@@ -37,7 +38,7 @@ func _process(_delta: float):
 	handle_movement()
 
 func animate_to(px: Vector2):
-	moving = true
+	can_move = "x" if direction == Vector2i.UP or direction == Vector2i.DOWN else "y"
 	
 	# get how long animation is
 	var frames: SpriteFrames = $AnimatedSprite2D.sprite_frames
@@ -49,5 +50,5 @@ func animate_to(px: Vector2):
 	# move the player
 	t.tween_property(self, "position", px, dur)
 	t.finished.connect(func():
-		moving = false
+		can_move = "all"
 		play_anim("_idle"))
