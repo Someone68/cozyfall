@@ -7,9 +7,11 @@ signal item_selected(index: int, item: Control)
 @export var highlight_color := Color(0.965, 0.82, 0.0, 1.0)
 @export var wrap_around := true
 @export var prefix := "> "
+@export var alternate_add := " "
 @export var spaces := "   "
 
 var index := 0
+var alternate_prefix := false
 
 func _ready():
 	_refresh()
@@ -42,5 +44,14 @@ func _refresh():
 	var items := _items()
 	for i in items.size():
 		items[i].modulate = highlight_color if i == index else normal_color
-		items[i].text = "> " + items[i].text.trim_prefix(spaces).trim_suffix(spaces) + spaces if i == index \
-		else spaces + items[i].text.trim_prefix(prefix).trim_prefix(spaces).trim_suffix(spaces) + spaces
+		items[i].text = alternate_add + prefix + remove_prefix(items[i].text) + spaces + alternate_add if i == index \
+		else spaces + alternate_add + remove_prefix(items[i].text) + spaces + alternate_add
+
+func _on_timer_timeout() -> void:
+	var items := _items()
+	items[index].text = alternate_add + prefix + remove_prefix(items[index].text) + spaces + alternate_add if alternate_prefix \
+	else prefix + alternate_add + remove_prefix(items[index].text) + spaces + alternate_add
+	alternate_prefix = !alternate_prefix
+
+func remove_prefix(text: String) -> String:
+	return text.trim_prefix(alternate_add).trim_prefix(prefix).trim_prefix(spaces).trim_prefix(alternate_add).trim_suffix(spaces).trim_suffix(alternate_add)
