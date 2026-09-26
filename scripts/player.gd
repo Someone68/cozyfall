@@ -8,6 +8,7 @@ var can_move := "all"
 var temperature := 8
 var direction: Vector2i
 var dead := false
+var move_cooldown := false
 
 func _ready() -> void:
 	grid_pos = Vector2i(position / level.TILE)
@@ -37,7 +38,7 @@ func die():
 	queue_free()
 
 func handle_movement():
-	if (dead): return
+	if (dead or move_cooldown): return
 	var dir := Vector2i.ZERO
 	if can_move == "x" or can_move == "all":
 		if Input.is_action_just_pressed("ui_right"): dir = Vector2i.RIGHT
@@ -49,6 +50,8 @@ func handle_movement():
 		direction = dir
 		play_anim()
 		#level.save_state()
+		move_cooldown = true
+		$MovementCooldown.start()
 		if level.move_player(dir):
 			if !level.on_bonfire:
 				temperature -= 1
@@ -80,3 +83,6 @@ func animate_to(px: Vector2):
 	t.finished.connect(func():
 		can_move = "all"
 		play_anim("_idle"))
+
+func _on_movement_cooldown_timeout() -> void:
+	move_cooldown = false
