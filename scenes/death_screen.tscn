@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b3ywq4cn53b52" path="res://scenes/select_menu.tscn" id="3_7ns25"]
 
 [node name="DeathScreen" type="Control" unique_id=128950255]
+process_mode = 3
 z_index = 10
 layout_mode = 3
 anchors_preset = 15

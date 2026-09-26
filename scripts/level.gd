@@ -33,6 +33,7 @@ func is_tunnelable(pos: Vector2i) -> bool:
 func death():
 	var loaded_death_screen = DEATH_SCREEN.instantiate()
 	add_child(loaded_death_screen)
+	get_tree().paused = true
 
 func is_hard_wall(pos: Vector2i) -> bool:
 	return hard_walls.get_cell_source_id(pos) != -1
