@@ -7,19 +7,38 @@ const ADJ_DIRS := [Vector2i(1, 0), Vector2i(-1, 0), Vector2i(0, 1), Vector2i(0, 
 
 @onready var walls := $Walls
 @onready var player := $Player
+@onready var hard_walls := $BrickWalls
+
 var solids := {}
 var floors := {}
 var bonfires := {}
 var on_bonfire := false
 
+func tile_temp_cost(pos: Vector2i) -> int:
+	var f = floors.get(pos)
+	if f and "temp_cost" in f: return f.temp_cost
+	return 1
+
+func is_tunnelable(pos: Vector2i) -> bool:
+	var f = floors.get(pos)
+	return not (f and "no_tunnel" in f and f.no_tunnel)
 
 func death():
 	var loaded_death_screen = DEATH_SCREEN.instantiate()
 	add_child(loaded_death_screen)
 
+func is_hard_wall(pos: Vector2i) -> bool:
+	return hard_walls.get_cell_source_id(pos) != -1
+
 func is_wall(pos: Vector2i):
 	return not Rect2i(Vector2i.ZERO, SIZE).has_point(pos) \
-		or walls.get_cell_source_id(pos) != -1
+		or walls.get_cell_source_id(pos) != -1 \
+		or is_hard_wall(pos)
+
+func tunnel_path_clear(from: Vector2i, dir: Vector2i, dist: int) -> bool:
+	for i in range(1, dist + 1):
+		if is_hard_wall(from + dir * i): return false
+	return true
 
 func open_door(id) -> void:
 	var to_open := []
@@ -74,5 +93,5 @@ func set_statusbar(temperature : int):
 	elif(coldness == 8):
 		$StatusBar.play("full")
 
-func init_player(dir: Vector2i):
-	player.position = (player.grid_pos + dir) * TILE
+func init_player(_dir: Vector2i):
+	player.position = Vector2(player.grid_pos * TILE)

@@ -64,11 +64,14 @@ func handle_movement():
 
 func tunnel():
 	if dead or tunneling or can_move != "all": return
+	if not level.is_tunnelable(grid_pos): return
 	tunneling = true
 	play_anim("_tunnel_in")
 	await $AnimatedSprite2D.animation_finished
 	var target := grid_pos + direction * 3
-	var moved: bool = level.can_occupy(target)
+	var moved: bool = level.can_occupy(target) \
+	and level.is_tunnelable(target) \
+	and level.tunnel_path_clear(grid_pos, direction, 3)
 	if moved:
 		grid_pos = target
 		position = Vector2(target * TILE)
@@ -81,7 +84,7 @@ func tunnel():
 
 func after_move():
 	if !level.on_bonfire:
-		temperature -= 1
+		temperature -= level.tile_temp_cost(grid_pos)
 	if temperature < 0:
 		die()
 		return
