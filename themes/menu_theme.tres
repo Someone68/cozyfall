@@ -2,6 +2,22 @@
 
 [ext_resource type="FontFile" uid="uid://cb823j3rpi72o" path="res://fonts/Tiny5-Regular.ttf" id="1_funo8"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_funo8"]
+bg_color = Color(0.60038817, 0.60038817, 0.60038817, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d7wv1"]
+bg_color = Color(0.60038817, 0.60038817, 0.60038817, 0)
+border_color = Color(0.60038817, 0.60038817, 0.60038817, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ebccb"]
+bg_color = Color(0.60038817, 0.60038817, 0.60038817, 0)
+
 [resource]
 default_font = ExtResource("1_funo8")
 default_font_size = 8
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_hover_color = Color(0.96489865, 0.8198382, 0, 1)
+Button/colors/font_pressed_color = Color(0.96489865, 0.8198382, 0, 1)
+Button/styles/hover = SubResource("StyleBoxFlat_funo8")
+Button/styles/normal = SubResource("StyleBoxFlat_d7wv1")
+Button/styles/pressed = SubResource("StyleBoxFlat_ebccb")

@@ -3,6 +3,14 @@ extends MarginContainer
 func _on_select_menu_item_selected(_index: int, item: Control) -> void:
 	match item.name:
 		"Start":
-			Gamemgr.load_current_level()
+			_on_start_pressed()
 		"Quit":
-			get_tree().quit()
+			_on_quit_pressed()
+
+
+func _on_start_pressed() -> void:
+	Gamemgr.load_current_level()
+
+
+func _on_quit_pressed() -> void:
+	get_tree().quit()

@@ -26,22 +26,29 @@ theme_override_constants/separation = 9
 layout_mode = 2
 texture = ExtResource("2_bqqt6")
 
-[node name="SelectMenu" parent="VBoxContainer" unique_id=647501129 instance=ExtResource("4_wu84c")]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" unique_id=1859941748]
+layout_mode = 2
+theme_override_constants/margin_left = 14
+theme_override_constants/margin_right = 14
+
+[node name="SelectMenu" parent="VBoxContainer/MarginContainer" unique_id=647501129 instance=ExtResource("4_wu84c")]
 layout_mode = 2
 
-[node name="Start" type="Label" parent="VBoxContainer/SelectMenu" unique_id=848526035]
+[node name="Start" type="Button" parent="VBoxContainer/MarginContainer/SelectMenu" unique_id=615869429]
 layout_mode = 2
 text = "start"
-horizontal_alignment = 1
+flat = true
 
-[node name="Options" type="Label" parent="VBoxContainer/SelectMenu" unique_id=1532990664]
+[node name="Options" type="Button" parent="VBoxContainer/MarginContainer/SelectMenu" unique_id=578380013]
 layout_mode = 2
 text = "options"
-horizontal_alignment = 1
+flat = true
 
-[node name="Quit" type="Label" parent="VBoxContainer/SelectMenu" unique_id=999260275]
+[node name="Quit" type="Button" parent="VBoxContainer/MarginContainer/SelectMenu" unique_id=1581533968]
 layout_mode = 2
 text = "quit game"
-horizontal_alignment = 1
+flat = true
 
-[connection signal="item_selected" from="VBoxContainer/SelectMenu" to="." method="_on_select_menu_item_selected"]
+[connection signal="item_selected" from="VBoxContainer/MarginContainer/SelectMenu" to="." method="_on_select_menu_item_selected"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer/SelectMenu/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer/SelectMenu/Quit" to="." method="_on_quit_pressed"]

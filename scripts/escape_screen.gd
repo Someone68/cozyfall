@@ -17,9 +17,20 @@ func show_warning(action: String) -> void:
 func _on_select_menu_item_selected(_index: int, item: Control) -> void:
 	match item.name:
 		"BackToGame":
-			queue_free()
-			get_tree().paused = false
+			_on_back_to_game_pressed()
 		"Restart":
-			show_warning("restart")
+			_on_restart_pressed()
 		"Quit":
-			show_warning("quit")
+			_on_quit_pressed()
+
+
+func _on_back_to_game_pressed() -> void:
+	queue_free()
+	get_tree().paused = false
+
+func _on_restart_pressed() -> void:
+	show_warning("restart")
+
+
+func _on_quit_pressed() -> void:
+	show_warning("quit")

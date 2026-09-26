@@ -39,12 +39,18 @@ horizontal_alignment = 1
 [node name="SelectMenu" parent="VBoxContainer" unique_id=647501129 instance=ExtResource("3_7ns25")]
 layout_mode = 2
 
-[node name="TryAgain" type="Label" parent="VBoxContainer/SelectMenu" unique_id=284757862]
+[node name="TryAgain" type="Button" parent="VBoxContainer/SelectMenu" unique_id=1858231319]
+custom_maximum_size = Vector2(45, -1)
 layout_mode = 2
 text = "try again!"
+alignment = 0
 
-[node name="Quit" type="Label" parent="VBoxContainer/SelectMenu" unique_id=1298591346]
+[node name="Quit" type="Button" parent="VBoxContainer/SelectMenu" unique_id=10187259]
+custom_maximum_size = Vector2(55, -1)
 layout_mode = 2
 text = "quit to title..."
+alignment = 0
 
 [connection signal="item_selected" from="VBoxContainer/SelectMenu" to="." method="_on_select_menu_item_selected"]
+[connection signal="pressed" from="VBoxContainer/SelectMenu/TryAgain" to="." method="_on_try_again_pressed"]
+[connection signal="pressed" from="VBoxContainer/SelectMenu/Quit" to="." method="_on_quit_pressed"]

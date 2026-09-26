@@ -1,9 +1,16 @@
 extends Control
 
 func _on_select_menu_item_selected(_index: int, item: Control) -> void:
-	get_tree().paused = false
 	match item.name:
 		"TryAgain":
-			get_tree().reload_current_scene()
+			_on_try_again_pressed()
 		"Quit":
-			get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+			_on_quit_pressed()
+
+func _on_try_again_pressed() -> void:
+	get_tree().paused = false
+	get_tree().reload_current_scene()
+
+func _on_quit_pressed() -> void:
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
