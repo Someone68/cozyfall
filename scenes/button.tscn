@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://cpiphle12k0cp"]
+
+[ext_resource type="Script" uid="uid://c8mfbrdw783v7" path="res://scripts/button.gd" id="1_3q610"]
+[ext_resource type="Texture2D" uid="uid://duprt4pair8wg" path="res://sprites/button_placeholder.png" id="1_rhj8v"]
+[ext_resource type="Texture2D" uid="uid://beus1ap0wurtx" path="res://sprites/button_pressed_placeholder.png" id="2_3q610"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i7y4x"]
+atlas = ExtResource("1_rhj8v")
+region = Rect2(0, 0, 6, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1bdt2"]
+atlas = ExtResource("2_3q610")
+region = Rect2(0, 0, 6, 6)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1eln1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i7y4x")
+}],
+"loop": 0,
+"name": &"off",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1bdt2")
+}],
+"loop": 0,
+"name": &"on",
+"speed": 5.0
+}]
+
+[node name="Button" type="Node2D" unique_id=1875483585]
+script = ExtResource("1_3q610")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1837639633]
+position = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_1eln1")
+animation = &"off"

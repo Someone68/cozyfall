@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://bywris2cmufxx" path="res://scenes/player.tscn" id="3_ppgk2"]
 [ext_resource type="PackedScene" uid="uid://ccskmild8mi3c" path="res://scenes/bonfire.tscn" id="5_ppgk2"]
 [ext_resource type="Texture2D" uid="uid://bqx21ud32uve8" path="res://sprites/coldbar.png" id="6_2r41h"]
+[ext_resource type="PackedScene" uid="uid://cpiphle12k0cp" path="res://scenes/button.tscn" id="8_b121j"]
+[ext_resource type="PackedScene" uid="uid://qcllx1lqfgx4" path="res://scenes/door.tscn" id="9_8c41q"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4wyf3"]
 texture = ExtResource("1_w8frs")
@@ -149,10 +151,12 @@ tile_map_data = PackedByteArray("AAAGAAQAAAAAAAAAAAAGAAUAAAAAAAAAAAAHAAUAAAAAAAA
 tile_set = SubResource("TileSet_k0juu")
 
 [node name="Player" parent="." unique_id=230875539 instance=ExtResource("3_ppgk2")]
+z_index = 1
 position = Vector2(8, 16)
 starting_direction = "east"
 
 [node name="Bonfire" parent="." unique_id=1475972330 instance=ExtResource("5_ppgk2")]
+z_index = 1
 position = Vector2(32, 16)
 
 [node name="StatusBar" type="AnimatedSprite2D" parent="." unique_id=1903935334]
@@ -161,3 +165,15 @@ scale = Vector2(1, 0.5)
 sprite_frames = SubResource("SpriteFrames_1eln1")
 animation = &"normal"
 centered = false
+
+[node name="Button" parent="." unique_id=1875483585 instance=ExtResource("8_b121j")]
+position = Vector2(32, 40)
+door_id = "testdoor"
+
+[node name="Door" parent="." unique_id=442602330 instance=ExtResource("9_8c41q")]
+position = Vector2(24, 40)
+id = "testdoor"
+
+[node name="Door2" parent="." unique_id=1773783629 instance=ExtResource("9_8c41q")]
+position = Vector2(24, 48)
+id = "testdoor"

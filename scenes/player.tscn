@@ -304,9 +304,9 @@ animations = [{
 script = ExtResource("1_g2els")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1099299]
-position = Vector2(4, 1)
+position = Vector2(4, 0)
 sprite_frames = SubResource("SpriteFrames_fsrav")
-animation = &"die"
+animation = &"right"
 
 [node name="MovementCooldown" type="Timer" parent="." unique_id=1586735100]
 wait_time = 0.3
