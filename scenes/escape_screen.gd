@@ -9,7 +9,7 @@ func _on_select_menu_item_selected(_index: int, item: Control) -> void:
 	get_tree().paused = false
 	match item.name:
 		"BackToGame":
-			get_tree().paused = false
+			queue_free()
 		"Restart":
 			get_tree().reload_current_scene()
 		"Quit":
