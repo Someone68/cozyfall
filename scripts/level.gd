@@ -12,6 +12,7 @@ var floors := {}
 var bonfires := {}
 var on_bonfire := false
 
+
 func death():
 	var loaded_death_screen = DEATH_SCREEN.instantiate()
 	add_child(loaded_death_screen)
@@ -32,20 +33,27 @@ func open_door(id) -> void:
 		if door.has_method("open"):
 			door.open()
 
+func can_occupy(pos: Vector2i) -> bool:
+	return not (is_wall(pos) or solids.has(pos) or bonfires.has(pos))
+
 func move_player(dir: Vector2i) -> bool:
 	var target = player.grid_pos + dir
+	if not can_occupy(target): return false
 	if is_wall(target) or solids.has(target) or bonfires.has(target): return false
 	player.grid_pos = target
 	player.animate_to(target * TILE)
-	if floors.has(target):
-		floors[target].on_enter(player)
+	return true
+
+func _on_player_arrived():
+	var pos = player.grid_pos
+	if floors.has(pos):
+		floors[pos].on_enter(player)
 	var near_bonfire = null
-	for adj_dir in ADJ_DIRS: # check in 4 cardinal directions for a bonfire
-		var adj_pos = target + adj_dir
+	for adj_dir in ADJ_DIRS:
+		var adj_pos = pos + adj_dir
 		if bonfires.has(adj_pos):
 			near_bonfire = bonfires[adj_pos]
 			break
-
 	if near_bonfire != null and not on_bonfire:
 		print("player is near a bonfire")
 		on_bonfire = true
@@ -53,7 +61,8 @@ func move_player(dir: Vector2i) -> bool:
 	elif near_bonfire == null and on_bonfire:
 		print("player exited")
 		on_bonfire = false
-	return true
+	
+	player.after_move()
 
 func set_statusbar(temperature : int):
 	var coldness = 8 - temperature
