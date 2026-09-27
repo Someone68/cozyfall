@@ -1,5 +1,7 @@
 extends Control
 
+@export var WARN_SCREEN : PackedScene
+
 func fade_in():
 	$VBoxContainer/VBoxContainer/StageCompletedText.text = "stage %s completed" % str(Settings.level-1)
 	var t = get_tree().create_tween()
@@ -8,10 +10,17 @@ func fade_in():
 	t.tween_property(self, "modulate:a", 1, 0.5)
 
 func _on_select_menu_item_selected(index: int, item: Control) -> void:
-	get_tree().paused = false
 	if (index == 0):
+		get_tree().paused = false
 		Gamemgr.load_current_level()
 	elif (index == 1):
-		get_tree().reload_current_scene()
+		show_warning("restart")
 	else:
+		get_tree().paused = false
 		Gamemgr.back_to_menu()
+
+func show_warning(action: String) -> void:
+	process_mode = Node.PROCESS_MODE_PAUSABLE
+	var loaded_warn_screen = WARN_SCREEN.instantiate()
+	loaded_warn_screen.warning_action = action
+	add_child(loaded_warn_screen)

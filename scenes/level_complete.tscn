@@ -3,6 +3,7 @@
 [ext_resource type="Theme" uid="uid://cdv0csb0dp43j" path="res://themes/menu_theme.tres" id="1_2e2w2"]
 [ext_resource type="Script" uid="uid://dnnrnp1yp3pp4" path="res://scripts/level_complete.gd" id="2_2e2w2"]
 [ext_resource type="PackedScene" uid="uid://b3ywq4cn53b52" path="res://scenes/select_menu.tscn" id="3_3oeyx"]
+[ext_resource type="PackedScene" uid="uid://benrrbluvikv8" path="res://scenes/warn.tscn" id="3_rovvh"]
 
 [node name="LevelComplete" type="Control" unique_id=128950255]
 process_mode = 3
@@ -16,6 +17,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_2e2w2")
 script = ExtResource("2_2e2w2")
+WARN_SCREEN = ExtResource("3_rovvh")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1687184408]
 layout_mode = 0

@@ -1,5 +1,7 @@
 extends Control
 
+var is_child := false
+
 func _on_select_menu_item_selected(index: int, item: Control) -> void:
 	match item.name:
 		"Music":
@@ -25,4 +27,8 @@ func _on_credits_pressed() -> void:
 	pass # Replace with function body.
 	
 func _on_go_back_pressed() -> void:
-	Gamemgr.back_to_menu()
+	if is_child:
+		get_parent().process_mode = Node.PROCESS_MODE_ALWAYS
+		queue_free()
+	else:
+		Gamemgr.back_to_menu()

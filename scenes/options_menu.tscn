@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b3ywq4cn53b52" path="res://scenes/select_menu.tscn" id="3_3xsyx"]
 
 [node name="OptionsMenu" type="Control" unique_id=2014394168]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 0
 offset_right = 96.0
