@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://cpiphle12k0cp" path="res://scenes/button.tscn" id="6_qsj6i"]
 [ext_resource type="PackedScene" uid="uid://7t5f6535bd8q" path="res://scenes/ice.tscn" id="6_vnf24"]
 [ext_resource type="Theme" uid="uid://cdv0csb0dp43j" path="res://themes/menu_theme.tres" id="7_pm1y0"]
-[ext_resource type="PackedScene" uid="uid://fqb04t3rtknb" path="res://scenes/crate.tscn" id="8_v0vb7"]
 [ext_resource type="PackedScene" uid="uid://cckfdlry2xpmq" path="res://scenes/tree.tscn" id="9_lsgss"]
 
 [node name="Level5" unique_id=1064352627 instance=ExtResource("1_qsj6i")]
@@ -62,13 +61,5 @@ theme_override_constants/line_spacing = 0
 text = "ice is very cold, brrr"
 horizontal_alignment = 1
 
-[node name="Crate" parent="." index="18" unique_id=1267371780 instance=ExtResource("8_v0vb7")]
-z_index = 1
-position = Vector2(48, 32)
-
-[node name="Crate2" parent="." index="19" unique_id=1141640780 instance=ExtResource("8_v0vb7")]
-z_index = 1
-position = Vector2(64, 32)
-
-[node name="Tree" parent="." index="20" unique_id=863964832 instance=ExtResource("9_lsgss")]
+[node name="Tree" parent="." index="18" unique_id=863964832 instance=ExtResource("9_lsgss")]
 position = Vector2(16, 56)
