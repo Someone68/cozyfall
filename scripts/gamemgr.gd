@@ -3,6 +3,7 @@ extends Node
 const levels := [
 	"res://scenes/levels/level1.tscn",
 	"res://scenes/levels/level2.tscn",
+	"res://scenes/levels/level3.tscn"
 ]
 
 var current_level := 1
