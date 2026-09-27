@@ -1051,7 +1051,7 @@ sprite_frames = SubResource("SpriteFrames_fsrav")
 animation = &"down_idle"
 
 [node name="MovementCooldown" type="Timer" parent="." unique_id=1586735100]
-wait_time = 0.3
+wait_time = 0.1
 one_shot = true
 
 [connection signal="timeout" from="MovementCooldown" to="." method="_on_movement_cooldown_timeout"]
