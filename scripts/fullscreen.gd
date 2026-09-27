@@ -14,7 +14,6 @@ func set_fullscreen(fullscreen : bool):
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 
 func toggle_fullscreen():
-	if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN:
-		set_fullscreen(false)
-	else:
-		set_fullscreen(true)
+	Settings.fullscreen = not Settings.fullscreen
+	Settings.save()
+	set_fullscreen(Settings.fullscreen)
