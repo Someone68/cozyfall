@@ -43,6 +43,7 @@ func play_anim(suffix: String = ""):
 	$AnimatedSprite2D.play(anim + suffix)
 
 func die(spike := false):
+	if (dead == true): return
 	print("die")
 	dead = true
 	$AnimatedSprite2D.play("die" + ("_spike" if spike else ""))
