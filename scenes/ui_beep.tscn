@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://5fu6rib40g4x"]
+
+[ext_resource type="AudioStream" uid="uid://dt5npwecq045s" path="res://sounds/menu_select.wav" id="1_5bouc"]
+
+[node name="UIBeep" type="AudioStreamPlayer" unique_id=1207721332]
+stream = ExtResource("1_5bouc")

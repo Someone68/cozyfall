@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 Gamemgr="*uid://dkbua2kai36i0"
 Settings="*uid://bpo0d0pj2igqu"
 Music="*uid://bh2my5m0852s1"
+UiBeep="*uid://5fu6rib40g4x"
 
 [display]
 
