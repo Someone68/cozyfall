@@ -23,47 +23,46 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_wu84c")
 theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 6
+theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 8
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MainMenu" unique_id=908047947]
 layout_mode = 2
-theme_override_constants/separation = 9
+theme_override_constants/separation = 7
 
 [node name="TextureRect" type="TextureRect" parent="MainMenu/VBoxContainer" unique_id=463689465]
 layout_mode = 2
 texture = ExtResource("2_bqqt6")
 
-[node name="MarginContainer" type="MarginContainer" parent="MainMenu/VBoxContainer" unique_id=1859941748]
-layout_mode = 2
-theme_override_constants/margin_left = 14
-theme_override_constants/margin_right = 14
-
-[node name="SelectMenu" parent="MainMenu/VBoxContainer/MarginContainer" unique_id=647501129 instance=ExtResource("4_wu84c")]
+[node name="CenterContainer" type="CenterContainer" parent="MainMenu/VBoxContainer" unique_id=1881877339]
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 
-[node name="Continue" type="Button" parent="MainMenu/VBoxContainer/MarginContainer/SelectMenu" unique_id=615869429]
+[node name="SelectMenu" parent="MainMenu/VBoxContainer/CenterContainer" unique_id=647501129 instance=ExtResource("4_wu84c")]
+layout_mode = 2
+
+[node name="Continue" type="Button" parent="MainMenu/VBoxContainer/CenterContainer/SelectMenu" unique_id=615869429]
 layout_mode = 2
 text = "continue"
 flat = true
 
-[node name="NewGame" type="Button" parent="MainMenu/VBoxContainer/MarginContainer/SelectMenu" unique_id=1531426439]
+[node name="NewGame" type="Button" parent="MainMenu/VBoxContainer/CenterContainer/SelectMenu" unique_id=1531426439]
 layout_mode = 2
 text = "new game"
 flat = true
 
-[node name="Options" type="Button" parent="MainMenu/VBoxContainer/MarginContainer/SelectMenu" unique_id=578380013]
+[node name="Options" type="Button" parent="MainMenu/VBoxContainer/CenterContainer/SelectMenu" unique_id=578380013]
 layout_mode = 2
 text = "options"
 flat = true
 
-[node name="Quit" type="Button" parent="MainMenu/VBoxContainer/MarginContainer/SelectMenu" unique_id=1581533968]
+[node name="Quit" type="Button" parent="MainMenu/VBoxContainer/CenterContainer/SelectMenu" unique_id=1581533968]
 layout_mode = 2
 text = "quit game"
 flat = true
 
-[connection signal="item_selected" from="MainMenu/VBoxContainer/MarginContainer/SelectMenu" to="." method="_on_select_menu_item_selected"]
-[connection signal="pressed" from="MainMenu/VBoxContainer/MarginContainer/SelectMenu/Continue" to="MainMenu" method="_on_continue_pressed"]
-[connection signal="pressed" from="MainMenu/VBoxContainer/MarginContainer/SelectMenu/NewGame" to="MainMenu" method="_on_start_pressed"]
-[connection signal="pressed" from="MainMenu/VBoxContainer/MarginContainer/SelectMenu/Quit" to="MainMenu" method="_on_quit_pressed"]
+[connection signal="item_selected" from="MainMenu/VBoxContainer/CenterContainer/SelectMenu" to="." method="_on_select_menu_item_selected"]
+[connection signal="pressed" from="MainMenu/VBoxContainer/CenterContainer/SelectMenu/Continue" to="MainMenu" method="_on_continue_pressed"]
+[connection signal="pressed" from="MainMenu/VBoxContainer/CenterContainer/SelectMenu/NewGame" to="MainMenu" method="_on_start_pressed"]
+[connection signal="pressed" from="MainMenu/VBoxContainer/CenterContainer/SelectMenu/Quit" to="MainMenu" method="_on_quit_pressed"]
