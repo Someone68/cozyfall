@@ -1,5 +1,8 @@
 extends Node
 
+func _ready() -> void:
+	set_fullscreen(Settings.fullscreen)
+
 func _unhandled_input(event):
 	if event.is_action_pressed("fullscreen"):
 		toggle_fullscreen()
