@@ -14,7 +14,7 @@ var index := 0
 var alternate_prefix := false
 
 func _ready():
-	_refresh()
+	refresh()
 
 func _items() -> Array:
 	return get_children().filter(func(c): return c is Control and c.visible)
@@ -38,9 +38,9 @@ func _unhandled_input(event):
 
 func _move(dir: int, count: int):
 	index = wrapi(index + dir, 0, count) if wrap_around else clampi(index + dir, 0, count - 1)
-	_refresh()
+	refresh()
 
-func _refresh():
+func refresh():
 	$Timer.start(0.3)
 	$Timer.set_wait_time(1)
 	alternate_prefix = false
