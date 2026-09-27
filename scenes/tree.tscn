@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cckfdlry2xpmq"]
+
+[ext_resource type="Texture2D" uid="uid://dtrqkmmyvoteh" path="res://sprites/Fall_Tree.png" id="1_avsvi"]
+[ext_resource type="Script" uid="uid://5q0kbxpqa8j8" path="res://scripts/solid.gd" id="1_vplca"]
+
+[node name="Tree" type="Node2D" unique_id=863964832]
+script = ExtResource("1_vplca")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1328258843]
+position = Vector2(-3, -12)
+texture = ExtResource("1_avsvi")
+centered = false
