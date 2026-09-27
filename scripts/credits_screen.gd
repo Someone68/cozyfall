@@ -1,5 +1,6 @@
 extends Control
 
+var is_child := false
 const titles := ["DESIGN", "PROGRAMMING", "UI/LEVEL DESIGN", "ART", "MUSIC & SFX", "THANK YOU"]
 const names := ["potato, rbird._", "potato, itstntcraft", "itstntcraft", "rbird._, bacon", "bacon", "for playing <3"]
 var i = 0
@@ -21,4 +22,8 @@ func _on_name_timer_timeout() -> void:
 	$MarginContainer/VBoxContainer/Label2.text = names[i]
 
 func _on_select_menu_item_selected(index: int, item: Control) -> void:
-	Gamemgr.back_to_menu()
+	if is_child:
+		get_parent().process_mode = Node.PROCESS_MODE_ALWAYS
+		queue_free()
+	else:
+		Gamemgr.back_to_menu()

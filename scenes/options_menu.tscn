@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://by7u5foeo5qet" path="res://scripts/options_menu.gd" id="2_3xsyx"]
 [ext_resource type="Texture2D" uid="uid://b02rbyhyc1gvu" path="res://sprites/rabbit-carrot-cover-art-no-title.png" id="2_lfjc7"]
 [ext_resource type="PackedScene" uid="uid://b3ywq4cn53b52" path="res://scenes/select_menu.tscn" id="3_3xsyx"]
+[ext_resource type="PackedScene" uid="uid://cl0s04svxufwq" path="res://scenes/credits_screen.tscn" id="3_dhn0l"]
 
 [node name="OptionsMenu" type="Control" unique_id=2014394168]
 process_mode = 3
@@ -13,6 +14,7 @@ offset_right = 96.0
 offset_bottom = 96.0
 theme = ExtResource("1_hm4m4")
 script = ExtResource("2_3xsyx")
+CREDITS_SCREEN = ExtResource("3_dhn0l")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1606540392]
 layout_mode = 0

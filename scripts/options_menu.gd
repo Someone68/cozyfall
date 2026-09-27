@@ -1,5 +1,6 @@
 extends Control
 
+@export var CREDITS_SCREEN : PackedScene
 var is_child := false
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -45,7 +46,14 @@ func _on_fullscreen_pressed() -> void:
 	$VBoxContainer/SelectMenu.refresh()
 
 func _on_credits_pressed() -> void:
-	Gamemgr.go_to_credits()
+	if is_child:
+		process_mode = Node.PROCESS_MODE_PAUSABLE
+		var loaded_credits_screen = CREDITS_SCREEN.instantiate()
+		loaded_credits_screen.is_child = true
+		add_child(loaded_credits_screen)
+	else:
+		Gamemgr.go_to_credits()
+
 	
 func _on_go_back_pressed() -> void:
 	if is_child:
