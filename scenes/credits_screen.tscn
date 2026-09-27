@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://cl0s04svxufwq"]
+
+[ext_resource type="Texture2D" uid="uid://b02rbyhyc1gvu" path="res://sprites/rabbit-carrot-cover-art-no-title.png" id="1_8n838"]
+[ext_resource type="Theme" uid="uid://cdv0csb0dp43j" path="res://themes/menu_theme.tres" id="1_wiy8m"]
+[ext_resource type="Script" uid="uid://bcih2bpdibl4v" path="res://scripts/credits_screen.gd" id="2_m2eu1"]
+[ext_resource type="PackedScene" uid="uid://b3ywq4cn53b52" path="res://scenes/select_menu.tscn" id="4_1amdp"]
+[ext_resource type="AudioStream" uid="uid://bcy0hpw0ijcny" path="res://sounds/credits_faded.mp3" id="5_wdjou"]
+
+[node name="CreditsScreen" type="Control" unique_id=1593856631]
+process_mode = 3
+z_index = 10
+layout_mode = 3
+anchors_preset = 0
+offset_right = 96.0
+offset_bottom = 96.0
+theme = ExtResource("1_wiy8m")
+script = ExtResource("2_m2eu1")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1882587202]
+layout_mode = 0
+offset_right = 96.0
+offset_bottom = 96.0
+texture = ExtResource("1_8n838")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1285934538]
+layout_mode = 0
+offset_right = 96.0
+offset_bottom = 96.0
+color = Color(0, 0, 0, 0.65882355)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=896100655]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=858344627]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=290066854]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.65012825, 0.6501283, 0.65012825, 1)
+text = "TITLE"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer" unique_id=11061298]
+layout_mode = 2
+text = "names"
+horizontal_alignment = 1
+
+[node name="NameTimer" type="Timer" parent="." unique_id=998889841]
+wait_time = 2.0
+autostart = true
+
+[node name="SelectMenu" parent="." unique_id=647501129 instance=ExtResource("4_1amdp")]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="SelectMenu" unique_id=583773190]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6542321, 0.6542321, 0.654232, 1)
+text = "z or enter to exit"
+
+[node name="CreditsMusic" type="AudioStreamPlayer" parent="." unique_id=1453760796]
+stream = ExtResource("5_wdjou")
+
+[connection signal="timeout" from="NameTimer" to="." method="_on_name_timer_timeout"]
+[connection signal="item_selected" from="SelectMenu" to="." method="_on_select_menu_item_selected"]

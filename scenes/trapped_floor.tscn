@@ -40,4 +40,5 @@ animation = &"off"
 centered = false
 
 [node name="Activate" type="AudioStreamPlayer" parent="." unique_id=930885341]
+bus = &"SFX"
 stream = ExtResource("3_5i53w")

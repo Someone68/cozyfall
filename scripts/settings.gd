@@ -2,16 +2,26 @@ extends Node
 
 const PATH := "user://settings.cfg"
 
+const SFX_BUS := "SFX"
+
 var level := 1
 var music := true
-var sfx := true
+var sfx := true:
+	set(value):
+		sfx = value
+		_apply_sfx()
 
 func _ready() -> void:
 	var cfg := ConfigFile.new()
 	if cfg.load(PATH) == OK:
 		level = int(cfg.get_value("progress", "level", level))
 		music = bool(cfg.get_value("settings", "music", music))
-		sfx = bool(cfg.get_value("settings", "sfx", music))
+		sfx = bool(cfg.get_value("settings", "sfx", sfx))
+
+func _apply_sfx() -> void:
+	var idx := AudioServer.get_bus_index(SFX_BUS)
+	if idx != -1:
+		AudioServer.set_bus_mute(idx, not sfx)
 
 func save() -> void:
 	var cfg := ConfigFile.new()

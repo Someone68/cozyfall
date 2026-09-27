@@ -17,5 +17,11 @@ tile_map_data = PackedByteArray("AAAEAAsAAQADAAYAAAAEAAoAAQADAAUAAAAEAAkAAQADAAU
 position = Vector2(48, 80)
 starting_direction = "north"
 
+[node name="WinSound" parent="." index="7" unique_id=1514011327]
+bus = &"Master"
+
 [node name="Carrot" parent="." index="8" unique_id=1793681335 instance=ExtResource("2_fb5ls")]
 position = Vector2(48, 24)
+
+[node name="EatCarrot" parent="." index="9" unique_id=2062713001]
+bus = &"Master"

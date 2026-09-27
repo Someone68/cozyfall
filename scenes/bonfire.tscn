@@ -59,7 +59,9 @@ frame_progress = 0.46631652
 centered = false
 
 [node name="Fire1" type="AudioStreamPlayer" parent="." unique_id=820102374]
+bus = &"SFX"
 stream = ExtResource("3_jmhiw")
 
 [node name="Fire2" type="AudioStreamPlayer" parent="." unique_id=1712980966]
+bus = &"SFX"
 stream = ExtResource("4_8aldm")

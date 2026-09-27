@@ -4,13 +4,15 @@ extends Control
 var i = 0
 
 func _ready() -> void:
+	$Timer.start()
 	$Label.text = dialogues[0]
 
-func _process(delta: float) -> void:
-	if (Input.is_action_just_pressed("ui_accept")):
-		i += 1
-		if (i >= len(dialogues)):
-			Gamemgr.back_to_menu()
-			return
-		$Beep.play()
-		$Label.text = dialogues[i]
+
+func _on_timer_timeout() -> void:
+	i += 1
+	if (i >= len(dialogues)):
+		get_tree().paused = false
+		Gamemgr.go_to_credits()
+		return
+	$Beep.play()
+	$Label.text = dialogues[i]

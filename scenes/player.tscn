@@ -1067,21 +1067,27 @@ wait_time = 0.08
 one_shot = true
 
 [node name="DeathFreeze" type="AudioStreamPlayer" parent="." unique_id=160694435]
+bus = &"SFX"
 stream = ExtResource("3_tuyoq")
 
 [node name="DeathSpike" type="AudioStreamPlayer" parent="." unique_id=946911354]
+bus = &"SFX"
 stream = ExtResource("4_fjrip")
 
 [node name="EatCarrot" type="AudioStreamPlayer" parent="." unique_id=1242558766]
+bus = &"SFX"
 stream = ExtResource("5_smehm")
 
 [node name="Jump" type="AudioStreamPlayer" parent="." unique_id=38972655]
+bus = &"SFX"
 stream = SubResource("AudioStreamRandomizer_dqkch")
 
 [node name="TunnelIn" type="AudioStreamPlayer" parent="." unique_id=2096645314]
+bus = &"SFX"
 stream = ExtResource("7_fjrip")
 
 [node name="TunnelOut" type="AudioStreamPlayer" parent="." unique_id=1741338834]
+bus = &"SFX"
 stream = ExtResource("8_smehm")
 
 [connection signal="timeout" from="MovementCooldown" to="." method="_on_movement_cooldown_timeout"]

@@ -110,4 +110,5 @@ sprite_frames = SubResource("SpriteFrames_1eln1")
 animation = &"on"
 
 [node name="Press" type="AudioStreamPlayer" parent="." unique_id=412214108]
+bus = &"SFX"
 stream = ExtResource("3_3q610")
