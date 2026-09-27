@@ -8,6 +8,7 @@ const levels := [
 	"res://scenes/levels/level4_1.tscn",
 	"res://scenes/levels/level5.tscn",
 	"res://scenes/levels/level6.tscn",
+	"res://scenes/levels/level7_2.tscn",
 	"res://scenes/levels/level7.tscn",
 	"res://scenes/levels/level7_1.tscn",
 	"res://scenes/levels/level8.tscn",
