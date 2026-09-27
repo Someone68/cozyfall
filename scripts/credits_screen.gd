@@ -1,7 +1,7 @@
 extends Control
 
 const titles := ["DESIGN", "PROGRAMMING", "UI/LEVEL DESIGN", "ART", "MUSIC & SFX", "THANK YOU"]
-const names := ["potato, .rbird_", "potato, itstntcraft", "itstntcraft", ".rbird_, bacon", "bacon", "for playing <3"]
+const names := ["potato, rbird._", "potato, itstntcraft", "itstntcraft", "rbird._, bacon", "bacon", "for playing <3"]
 var i = 0
 
 func _ready() -> void:

@@ -13,10 +13,15 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	var scene := get_tree().current_scene
 	if scene == null: return
-	if get_tree().paused or scene.scene_file_path == MENU_SCENE or scene.scene_file_path == CREDITS_SCREEN or scene.scene_file_path == OPTIONS_MENU or not Settings.music:
-		stream_paused = true
+	var should_pause := get_tree().paused \
+		or scene.scene_file_path in [MENU_SCENE, CREDITS_SCREEN, OPTIONS_MENU] \
+		or not Settings.music
+	if should_pause:
+		if not stream_paused:
+			stream_paused = true
 		return
 	if not started:
 		play()
 		started = true
-	stream_paused = false
+	if stream_paused:
+		stream_paused = false
