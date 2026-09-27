@@ -160,13 +160,13 @@ offset_right = 96.0
 offset_bottom = 96.0
 
 [node name="WinSound" type="AudioStreamPlayer" parent="." unique_id=1514011327]
-bus = &"SFX"
 process_mode = 3
 stream = ExtResource("11_7pb6i")
+bus = &"SFX"
 
 [node name="EatCarrot" type="AudioStreamPlayer" parent="." unique_id=2062713001]
-bus = &"SFX"
 process_mode = 3
 stream = ExtResource("13_qogh7")
+bus = &"SFX"
 
 [connection signal="move_finished" from="Player" to="." method="_on_player_arrived"]

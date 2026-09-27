@@ -57,6 +57,13 @@ focus_mode = 0
 text = "sfx:  on"
 alignment = 0
 
+[node name="Fullscreen" type="Button" parent="VBoxContainer/SelectMenu" unique_id=1497614482]
+custom_maximum_size = Vector2(65, -1)
+layout_mode = 2
+focus_mode = 0
+text = "fullscreen:  on"
+alignment = 0
+
 [node name="Credits" type="Button" parent="VBoxContainer/SelectMenu" unique_id=1581970988]
 custom_maximum_size = Vector2(35, -1)
 layout_mode = 2
@@ -73,5 +80,6 @@ alignment = 0
 [connection signal="item_selected" from="VBoxContainer/SelectMenu" to="." method="_on_select_menu_item_selected"]
 [connection signal="pressed" from="VBoxContainer/SelectMenu/Music" to="." method="_on_music_pressed"]
 [connection signal="pressed" from="VBoxContainer/SelectMenu/Sfx" to="." method="_on_sfx_pressed"]
+[connection signal="pressed" from="VBoxContainer/SelectMenu/Fullscreen" to="." method="_on_fullscreen_pressed"]
 [connection signal="pressed" from="VBoxContainer/SelectMenu/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="VBoxContainer/SelectMenu/GoBack" to="." method="_on_go_back_pressed"]
