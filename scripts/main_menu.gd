@@ -4,8 +4,8 @@ extends Control
 
 func _ready() -> void:
 	if Settings.level == 1:
-		$MainMenu/VBoxContainer/CenterContainer/SelectMenu/Continue.visible = false
-		$MainMenu/VBoxContainer/CenterContainer/SelectMenu.refresh()
+		$MainMenu/VBoxContainer/SelectMenu/Continue.visible = false
+		$MainMenu/VBoxContainer/SelectMenu.refresh()
 
 func show_warning(action: String) -> void:
 	#process_mode = Node.PROCESS_MODE_PAUSABLE
