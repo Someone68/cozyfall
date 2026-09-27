@@ -1,0 +1,130 @@
+[gd_scene format=4 uid="uid://dbmpb156volc2"]
+
+[ext_resource type="PackedScene" uid="uid://cyhs4soon2el5" path="res://scenes/levels/level.tscn" id="1_d35ek"]
+[ext_resource type="PackedScene" uid="uid://df6i7mujmblk2" path="res://scenes/flower.tscn" id="2_33xeh"]
+[ext_resource type="PackedScene" uid="uid://qcllx1lqfgx4" path="res://scenes/door.tscn" id="3_7301t"]
+[ext_resource type="PackedScene" uid="uid://7t5f6535bd8q" path="res://scenes/ice.tscn" id="5_komt3"]
+[ext_resource type="PackedScene" uid="uid://cpiphle12k0cp" path="res://scenes/button.tscn" id="6_5x7nc"]
+[ext_resource type="PackedScene" uid="uid://cgiabr2ia60m1" path="res://scenes/border.tscn" id="7_d35ek"]
+[ext_resource type="PackedScene" uid="uid://ccskmild8mi3c" path="res://scenes/bonfire.tscn" id="7_lifsd"]
+
+[node name="Level" unique_id=1064352627 instance=ExtResource("1_d35ek")]
+
+[node name="Floor" parent="." index="0" unique_id=2117507599]
+tile_map_data = PackedByteArray("AAALAAsAAQACAAAAAAALAAoAAQACAAAAAAALAAkAAQACAAAAAAALAAgAAQADAAAAAAALAAcAAQACAAAAAAALAAYAAQADAAAAAAALAAUAAQACAAAAAAALAAQAAQACAAAAAAALAAMAAQADAAAAAAALAAIAAQACAAAAAAALAAEAAQADAAAAAAALAAAAAQACAAAAAAAKAAsAAQACAAAAAAAKAAoAAQADAAAAAAAKAAkAAQADAAAAAAAKAAgAAQACAAAAAAAKAAcAAQADAAAAAAAKAAYAAQADAAAAAAAKAAUAAQADAAAAAAAKAAQAAQADAAAAAAAKAAMAAQACAAAAAAAKAAIAAQACAAAAAAAKAAEAAQACAAAAAAAKAAAAAQACAAAAAAAJAAsAAQACAAAAAAAJAAoAAQACAAAAAAAJAAkAAQADAAAAAAAJAAgAAQACAAAAAAAJAAcAAQACAAAAAAAJAAYAAQACAAAAAAAJAAUAAQADAAAAAAAJAAQAAQACAAAAAAAJAAMAAQADAAAAAAAJAAIAAQACAAAAAAAJAAEAAQACAAAAAAAJAAAAAQACAAAAAAAIAAsAAQADAAAAAAAIAAoAAQACAAAAAAAIAAkAAQACAAAAAAAIAAgAAQACAAAAAAAIAAcAAQACAAAAAAAIAAYAAQACAAAAAAAIAAUAAQACAAAAAAAIAAQAAQACAAAAAAAIAAMAAQACAAAAAAAIAAIAAQACAAAAAAAIAAEAAQADAAAAAAAIAAAAAQADAAAAAAAHAAsAAQADAAAAAAAHAAoAAQACAAAAAAAHAAkAAQADAAAAAAAHAAgAAQADAAAAAAAHAAcAAQADAAAAAAAHAAYAAQACAAAAAAAHAAUAAQACAAAAAAAHAAQAAQACAAAAAAAHAAMAAQADAAAAAAAHAAIAAQADAAAAAAAHAAEAAQADAAAAAAAHAAAAAQACAAAAAAAGAAsAAQACAAAAAAAGAAoAAQADAAAAAAAGAAkAAQADAAAAAAAGAAgAAQACAAAAAAAGAAcAAQACAAAAAAAGAAYAAQACAAAAAAAGAAUAAQACAAAAAAAGAAQAAQADAAAAAAAGAAMAAQADAAAAAAAGAAIAAQACAAAAAAAGAAEAAQACAAAAAAAGAAAAAQADAAAAAAAFAAsAAQADAAAAAAAFAAoAAQACAAAAAAAFAAkAAQACAAAAAAAFAAgAAQADAAAAAAAFAAcAAQADAAAAAAAFAAYAAQACAAAAAAAFAAUAAQADAAAAAAAFAAQAAQADAAAAAAAFAAMAAQACAAAAAAAFAAIAAQADAAAAAAAFAAEAAQACAAAAAAAFAAAAAQACAAAAAAAEAAsAAQADAAAAAAAEAAoAAQACAAAAAAAEAAkAAQADAAAAAAAEAAgAAQADAAAAAAAEAAcAAQADAAAAAAAEAAYAAQADAAAAAAAEAAUAAQACAAAAAAAEAAQAAQACAAAAAAAEAAMAAQACAAAAAAAEAAIAAQACAAAAAAAEAAEAAQADAAAAAAAEAAAAAQADAAAAAAADAAsAAQACAAAAAAADAAoAAQACAAAAAAADAAkAAQADAAAAAAADAAgAAQADAAAAAAADAAcAAQACAAAAAAADAAYAAQACAAAAAAADAAUAAQADAAAAAAADAAQAAQADAAAAAAADAAMAAQACAAAAAAADAAIAAQACAAAAAAADAAEAAQADAAAAAAADAAAAAQADAAAAAAACAAsAAQACAAAAAAACAAoAAQADAAAAAAACAAkAAQACAAAAAAACAAgAAQACAAAAAAACAAcAAQACAAAAAAACAAYAAQACAAAAAAACAAUAAQACAAAAAAACAAQAAQADAAAAAAACAAMAAQACAAAAAAACAAIAAQADAAAAAAACAAEAAQACAAAAAAACAAAAAQACAAAAAAABAAsAAQADAAAAAAABAAoAAQADAAAAAAABAAkAAQACAAAAAAABAAgAAQADAAAAAAABAAcAAQADAAAAAAABAAYAAQADAAAAAAABAAUAAQACAAAAAAABAAQAAQACAAAAAAABAAMAAQACAAAAAAABAAIAAQACAAAAAAABAAEAAQADAAAAAAABAAAAAQACAAAAAAAAAAsAAQACAAAAAAAAAAoAAQACAAAAAAAAAAkAAQACAAAAAAAAAAgAAQACAAAAAAAAAAcAAQADAAAAAAAAAAYAAQACAAAAAAAAAAUAAQADAAAAAAAAAAQAAQADAAAAAAAAAAMAAQACAAAAAAAAAAIAAQACAAAAAAAAAAEAAQACAAAAAAAAAAAAAQACAAAAAAA=")
+
+[node name="Walls" parent="." index="1" unique_id=1423184826]
+tile_map_data = PackedByteArray("AAAHAAEAAQACAAQAAAAIAAoAAQACAAQAAAAGAAsAAQACAAQAAAAGAAgAAQACAAQAAAAFAAkAAQADAAYAAAAFAAgAAQADAAQAAAAJAAUAAQACAAQAAAA=")
+
+[node name="BrickWalls" parent="." index="2" unique_id=856379871]
+tile_map_data = PackedByteArray("AAABAAEAAAABAAgAAAADAAEAAAAAAAgAAAACAAEAAAACAAgAAAADAAMAAAAAAAkAAAADAAIAAAAAAAgAAAAEAAUAAAADAAgAAAADAAUAAAABAAgAAAADAAYAAAAAAAgAAAADAAcAAAAAAAgAAAADAAgAAAAAAAkAAAADAAoAAAACAAgAAAACAAoAAAACAAgAAAABAAoAAAABAAgAAAAFAAMAAAABAAYAAAAFAAIAAAABAAYAAAAHAAMAAAABAAgAAAAHAAUAAAAAAAYAAAAGAAUAAAABAAYAAAAKAAAAAAADAAgAAAAJAAAAAAACAAgAAAAIAAAAAAABAAgAAAAHAAAAAAABAAYAAAAKAAIAAAABAAYAAAAJAAIAAAABAAYAAAAHAAgAAAADAAgAAAAJAAoAAAAAAAkAAAAHAAoAAAABAAYAAAAJAAgAAAAAAAYAAAAKAAEAAAAAAAgAAAAJAAkAAAAAAAgAAAALAAgAAAAAAAkAAAABAAgAAAAAAAkAAAABAAcAAAAAAAgAAAABAAYAAAAAAAgAAAABAAUAAAAAAAgAAAABAAQAAAAAAAgAAAABAAMAAAAAAAgAAAABAAIAAAAAAAgAAAADAAAAAAAAAAYAAAAEAAoAAAADAAgAAAAAAAsAAAABAAYAAAAAAAgAAAABAAgAAAAEAAsAAAAAAAkAAAAGAAgAAAABAAgAAAAHAAYAAAAAAAkAAAAIAAUAAAAAAAYAAAAIAAYAAAAAAAkAAAAIAAMAAAADAAgAAAAKAAYAAAAAAAkAAAAKAAUAAAAAAAYAAAALAAUAAAADAAgAAAALAAcAAAAAAAgAAAALAAYAAAAAAAgAAAAKAAsAAAAAAAkAAAAKAAoAAAAAAAgAAAAKAAkAAAAAAAYAAAA=")
+
+[node name="Player" parent="." index="3" unique_id=230875539]
+position = Vector2(16, 16)
+starting_direction = "south"
+
+[node name="Button" parent="." index="7" unique_id=1875483585 instance=ExtResource("6_5x7nc")]
+position = Vector2(72, 8)
+door_id = "door8.4"
+
+[node name="Door" parent="." index="8" unique_id=442602330 instance=ExtResource("3_7301t")]
+position = Vector2(24, 72)
+id = "door8.4"
+
+[node name="Button2" parent="." index="9" unique_id=1887759771 instance=ExtResource("6_5x7nc")]
+position = Vector2(40, 88)
+door_id = "door8.2"
+variant = 1
+
+[node name="Button3" parent="." index="10" unique_id=2106230970 instance=ExtResource("6_5x7nc")]
+position = Vector2(88, 0)
+door_id = "door8.3"
+variant = 2
+
+[node name="Door3" parent="." index="11" unique_id=32591709 instance=ExtResource("3_7301t")]
+position = Vector2(80, 56)
+id = "door8.3"
+variant = 2
+
+[node name="Flower" parent="." index="12" unique_id=1568804945 instance=ExtResource("2_33xeh")]
+position = Vector2(80, 64)
+
+[node name="Ice" parent="." index="13" unique_id=1879288839 instance=ExtResource("5_komt3")]
+position = Vector2(16, 24)
+
+[node name="Bonfire" parent="." index="14" unique_id=1475972330 instance=ExtResource("7_lifsd")]
+position = Vector2(32, 16)
+
+[node name="Button4" parent="." index="15" unique_id=1537051726 instance=ExtResource("6_5x7nc")]
+position = Vector2(32, 8)
+door_id = "door8.1"
+variant = 3
+
+[node name="Door4" parent="." index="16" unique_id=1863461053 instance=ExtResource("3_7301t")]
+position = Vector2(40, 8)
+id = "door8.1"
+variant = 3
+
+[node name="Door5" parent="." index="17" unique_id=152093980 instance=ExtResource("3_7301t")]
+position = Vector2(32, 24)
+id = "door8.4"
+
+[node name="Bonfire2" parent="." index="18" unique_id=1675661058 instance=ExtResource("7_lifsd")]
+position = Vector2(0, 80)
+
+[node name="Door6" parent="." index="19" unique_id=685115766 instance=ExtResource("3_7301t")]
+position = Vector2(8, 72)
+id = "door8.5"
+
+[node name="Button5" parent="." index="20" unique_id=1591347861 instance=ExtResource("6_5x7nc")]
+position = Vector2(0, 72)
+door_id = "door8.5"
+
+[node name="Button6" parent="." index="21" unique_id=763335215 instance=ExtResource("6_5x7nc")]
+position = Vector2(40, 48)
+door_id = "door8.6"
+
+[node name="Door7" parent="." index="22" unique_id=94234128 instance=ExtResource("3_7301t")]
+position = Vector2(40, 40)
+id = "door8.6"
+
+[node name="Border2" parent="." index="23" unique_id=2002029741 instance=ExtResource("7_d35ek")]
+position = Vector2(72, 96)
+
+[node name="Bonfire3" parent="." index="24" unique_id=347502656 instance=ExtResource("7_lifsd")]
+position = Vector2(56, 88)
+
+[node name="Door8" parent="." index="25" unique_id=179872089 instance=ExtResource("3_7301t")]
+position = Vector2(56, 64)
+
+[node name="Door9" parent="." index="26" unique_id=1043735569 instance=ExtResource("3_7301t")]
+position = Vector2(48, 64)
+id = "door8.2"
+variant = 1
+
+[node name="Ice4" parent="." index="27" unique_id=1583299212 instance=ExtResource("5_komt3")]
+position = Vector2(48, 72)
+
+[node name="Ice5" parent="." index="28" unique_id=509673225 instance=ExtResource("5_komt3")]
+position = Vector2(56, 72)
+
+[node name="Door11" parent="." index="29" unique_id=1484242349 instance=ExtResource("3_7301t")]
+position = Vector2(72, 48)
+id = "door8.2"
+variant = 1
+
+[node name="Door12" parent="." index="30" unique_id=772605015 instance=ExtResource("3_7301t")]
+position = Vector2(40, 56)
+id = "door8.2"
+variant = 1
+
+[node name="Ice2" parent="." index="31" unique_id=1575810486 instance=ExtResource("5_komt3")]
+position = Vector2(64, 32)
+
+[node name="Door2" parent="." index="32" unique_id=431875324 instance=ExtResource("3_7301t")]
+position = Vector2(56, 32)
+id = "door8.3"
+variant = 2
+
+[node name="Bonfire4" parent="." index="33" unique_id=690181628 instance=ExtResource("7_lifsd")]
+position = Vector2(72, 32)
