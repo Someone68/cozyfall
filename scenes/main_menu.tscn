@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://c0q6qq7236nwx"]
 
 [ext_resource type="Theme" uid="uid://cdv0csb0dp43j" path="res://themes/menu_theme.tres" id="1_wu84c"]
-[ext_resource type="Texture2D" uid="uid://c6ce7gf36vi3j" path="res://sprites/title_placeholder.png" id="2_bqqt6"]
 [ext_resource type="Script" uid="uid://dofm4sk6amm4w" path="res://scripts/main_menu.gd" id="2_wu84c"]
 [ext_resource type="PackedScene" uid="uid://benrrbluvikv8" path="res://scenes/warn.tscn" id="3_8ln24"]
+[ext_resource type="Texture2D" uid="uid://x74hxhod55fl" path="res://sprites/rabbit-carrot-cover-art.png" id="3_rtw2f"]
 [ext_resource type="PackedScene" uid="uid://b3ywq4cn53b52" path="res://scenes/select_menu.tscn" id="4_wu84c"]
 
 [node name="Control" type="Control" unique_id=1926708940]
@@ -13,6 +13,12 @@ offset_right = 96.0
 offset_bottom = 96.0
 script = ExtResource("2_wu84c")
 WARN_SCREEN = ExtResource("3_8ln24")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=672573759]
+layout_mode = 0
+offset_right = 96.0
+offset_bottom = 96.0
+texture = ExtResource("3_rtw2f")
 
 [node name="MainMenu" type="MarginContainer" parent="." unique_id=1471543239]
 layout_mode = 1
@@ -30,43 +36,36 @@ theme_override_constants/margin_bottom = 8
 [node name="VBoxContainer" type="VBoxContainer" parent="MainMenu" unique_id=908047947]
 layout_mode = 2
 theme_override_constants/separation = 7
+alignment = 2
 
-[node name="TextureRect" type="TextureRect" parent="MainMenu/VBoxContainer" unique_id=463689465]
-layout_mode = 2
-texture = ExtResource("2_bqqt6")
-
-[node name="CenterContainer" type="CenterContainer" parent="MainMenu/VBoxContainer" unique_id=1881877339]
-custom_minimum_size = Vector2(0, 48)
+[node name="SelectMenu" parent="MainMenu/VBoxContainer" unique_id=647501129 instance=ExtResource("4_wu84c")]
 layout_mode = 2
 
-[node name="SelectMenu" parent="MainMenu/VBoxContainer/CenterContainer" unique_id=647501129 instance=ExtResource("4_wu84c")]
+[node name="Continue" type="Button" parent="MainMenu/VBoxContainer/SelectMenu" unique_id=615869429]
 layout_mode = 2
-
-[node name="Continue" type="Button" parent="MainMenu/VBoxContainer/CenterContainer/SelectMenu" unique_id=615869429]
 focus_mode = 0
-layout_mode = 2
 text = "continue"
 flat = true
 
-[node name="NewGame" type="Button" parent="MainMenu/VBoxContainer/CenterContainer/SelectMenu" unique_id=1531426439]
-focus_mode = 0
+[node name="NewGame" type="Button" parent="MainMenu/VBoxContainer/SelectMenu" unique_id=1531426439]
 layout_mode = 2
+focus_mode = 0
 text = "new game"
 flat = true
 
-[node name="Options" type="Button" parent="MainMenu/VBoxContainer/CenterContainer/SelectMenu" unique_id=578380013]
-focus_mode = 0
+[node name="Options" type="Button" parent="MainMenu/VBoxContainer/SelectMenu" unique_id=578380013]
 layout_mode = 2
+focus_mode = 0
 text = "options"
 flat = true
 
-[node name="Quit" type="Button" parent="MainMenu/VBoxContainer/CenterContainer/SelectMenu" unique_id=1581533968]
-focus_mode = 0
+[node name="Quit" type="Button" parent="MainMenu/VBoxContainer/SelectMenu" unique_id=1581533968]
 layout_mode = 2
+focus_mode = 0
 text = "quit game"
 flat = true
 
-[connection signal="item_selected" from="MainMenu/VBoxContainer/CenterContainer/SelectMenu" to="." method="_on_select_menu_item_selected"]
-[connection signal="pressed" from="MainMenu/VBoxContainer/CenterContainer/SelectMenu/Continue" to="." method="_on_continue_pressed"]
-[connection signal="pressed" from="MainMenu/VBoxContainer/CenterContainer/SelectMenu/NewGame" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="MainMenu/VBoxContainer/CenterContainer/SelectMenu/Quit" to="." method="_on_quit_pressed"]
+[connection signal="item_selected" from="MainMenu/VBoxContainer/SelectMenu" to="." method="_on_select_menu_item_selected"]
+[connection signal="pressed" from="MainMenu/VBoxContainer/SelectMenu/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="MainMenu/VBoxContainer/SelectMenu/NewGame" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="MainMenu/VBoxContainer/SelectMenu/Quit" to="." method="_on_quit_pressed"]
