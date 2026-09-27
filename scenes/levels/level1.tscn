@@ -28,5 +28,5 @@ offset_bottom = 99.0
 theme = ExtResource("3_dd0lh")
 theme_override_constants/line_spacing = 0
 text = "head to the flower to 
-finish the level"
+complete the level"
 horizontal_alignment = 1
