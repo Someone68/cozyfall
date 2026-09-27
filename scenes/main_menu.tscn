@@ -34,9 +34,14 @@ theme_override_constants/margin_right = 14
 [node name="SelectMenu" parent="VBoxContainer/MarginContainer" unique_id=647501129 instance=ExtResource("4_wu84c")]
 layout_mode = 2
 
-[node name="Start" type="Button" parent="VBoxContainer/MarginContainer/SelectMenu" unique_id=615869429]
+[node name="Continue" type="Button" parent="VBoxContainer/MarginContainer/SelectMenu" unique_id=615869429]
 layout_mode = 2
-text = "start"
+text = "continue"
+flat = true
+
+[node name="NewGame" type="Button" parent="VBoxContainer/MarginContainer/SelectMenu" unique_id=1531426439]
+layout_mode = 2
+text = "new game"
 flat = true
 
 [node name="Options" type="Button" parent="VBoxContainer/MarginContainer/SelectMenu" unique_id=578380013]
@@ -50,5 +55,6 @@ text = "quit game"
 flat = true
 
 [connection signal="item_selected" from="VBoxContainer/MarginContainer/SelectMenu" to="." method="_on_select_menu_item_selected"]
-[connection signal="pressed" from="VBoxContainer/MarginContainer/SelectMenu/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer/SelectMenu/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer/SelectMenu/NewGame" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/MarginContainer/SelectMenu/Quit" to="." method="_on_quit_pressed"]

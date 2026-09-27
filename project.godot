@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Gamemgr="*uid://dkbua2kai36i0"
+Settings="*uid://bpo0d0pj2igqu"
 
 [display]
 
