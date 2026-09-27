@@ -3,9 +3,19 @@
 [ext_resource type="Theme" uid="uid://cdv0csb0dp43j" path="res://themes/menu_theme.tres" id="1_wu84c"]
 [ext_resource type="Texture2D" uid="uid://c6ce7gf36vi3j" path="res://sprites/title_placeholder.png" id="2_bqqt6"]
 [ext_resource type="Script" uid="uid://dofm4sk6amm4w" path="res://scripts/main_menu.gd" id="2_wu84c"]
+[ext_resource type="PackedScene" uid="uid://benrrbluvikv8" path="res://scenes/warn.tscn" id="3_8ln24"]
 [ext_resource type="PackedScene" uid="uid://b3ywq4cn53b52" path="res://scenes/select_menu.tscn" id="4_wu84c"]
 
-[node name="MainMenu" type="MarginContainer" unique_id=1471543239]
+[node name="Control" type="Control" unique_id=1926708940]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 96.0
+offset_bottom = 96.0
+script = ExtResource("2_wu84c")
+WARN_SCREEN = ExtResource("3_8ln24")
+
+[node name="MainMenu" type="MarginContainer" parent="." unique_id=1471543239]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -13,48 +23,47 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_wu84c")
 theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 10
+theme_override_constants/margin_top = 6
 theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 8
-script = ExtResource("2_wu84c")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=908047947]
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu" unique_id=908047947]
 layout_mode = 2
 theme_override_constants/separation = 9
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer" unique_id=463689465]
+[node name="TextureRect" type="TextureRect" parent="MainMenu/VBoxContainer" unique_id=463689465]
 layout_mode = 2
 texture = ExtResource("2_bqqt6")
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" unique_id=1859941748]
+[node name="MarginContainer" type="MarginContainer" parent="MainMenu/VBoxContainer" unique_id=1859941748]
 layout_mode = 2
 theme_override_constants/margin_left = 14
 theme_override_constants/margin_right = 14
 
-[node name="SelectMenu" parent="VBoxContainer/MarginContainer" unique_id=647501129 instance=ExtResource("4_wu84c")]
+[node name="SelectMenu" parent="MainMenu/VBoxContainer/MarginContainer" unique_id=647501129 instance=ExtResource("4_wu84c")]
 layout_mode = 2
 
-[node name="Continue" type="Button" parent="VBoxContainer/MarginContainer/SelectMenu" unique_id=615869429]
+[node name="Continue" type="Button" parent="MainMenu/VBoxContainer/MarginContainer/SelectMenu" unique_id=615869429]
 layout_mode = 2
 text = "continue"
 flat = true
 
-[node name="NewGame" type="Button" parent="VBoxContainer/MarginContainer/SelectMenu" unique_id=1531426439]
+[node name="NewGame" type="Button" parent="MainMenu/VBoxContainer/MarginContainer/SelectMenu" unique_id=1531426439]
 layout_mode = 2
 text = "new game"
 flat = true
 
-[node name="Options" type="Button" parent="VBoxContainer/MarginContainer/SelectMenu" unique_id=578380013]
+[node name="Options" type="Button" parent="MainMenu/VBoxContainer/MarginContainer/SelectMenu" unique_id=578380013]
 layout_mode = 2
 text = "options"
 flat = true
 
-[node name="Quit" type="Button" parent="VBoxContainer/MarginContainer/SelectMenu" unique_id=1581533968]
+[node name="Quit" type="Button" parent="MainMenu/VBoxContainer/MarginContainer/SelectMenu" unique_id=1581533968]
 layout_mode = 2
 text = "quit game"
 flat = true
 
-[connection signal="item_selected" from="VBoxContainer/MarginContainer/SelectMenu" to="." method="_on_select_menu_item_selected"]
-[connection signal="pressed" from="VBoxContainer/MarginContainer/SelectMenu/Continue" to="." method="_on_continue_pressed"]
-[connection signal="pressed" from="VBoxContainer/MarginContainer/SelectMenu/NewGame" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="VBoxContainer/MarginContainer/SelectMenu/Quit" to="." method="_on_quit_pressed"]
+[connection signal="item_selected" from="MainMenu/VBoxContainer/MarginContainer/SelectMenu" to="." method="_on_select_menu_item_selected"]
+[connection signal="pressed" from="MainMenu/VBoxContainer/MarginContainer/SelectMenu/Continue" to="MainMenu" method="_on_continue_pressed"]
+[connection signal="pressed" from="MainMenu/VBoxContainer/MarginContainer/SelectMenu/NewGame" to="MainMenu" method="_on_start_pressed"]
+[connection signal="pressed" from="MainMenu/VBoxContainer/MarginContainer/SelectMenu/Quit" to="MainMenu" method="_on_quit_pressed"]
