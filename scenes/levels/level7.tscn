@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://7t5f6535bd8q" path="res://scenes/ice.tscn" id="5_1gkwy"]
 [ext_resource type="PackedScene" uid="uid://cpiphle12k0cp" path="res://scenes/button.tscn" id="6_rge87"]
 [ext_resource type="PackedScene" uid="uid://ccskmild8mi3c" path="res://scenes/bonfire.tscn" id="7_emhfo"]
+[ext_resource type="PackedScene" uid="uid://cckfdlry2xpmq" path="res://scenes/tree.tscn" id="8_0g6gi"]
+[ext_resource type="PackedScene" uid="uid://fqb04t3rtknb" path="res://scenes/crate.tscn" id="9_v2r1a"]
 
 [node name="Level7" unique_id=1064352627 instance=ExtResource("1_mnr30")]
 
@@ -81,3 +83,9 @@ position = Vector2(72, 40)
 
 [node name="Ice12" parent="." index="24" unique_id=1445472237 instance=ExtResource("5_1gkwy")]
 position = Vector2(80, 40)
+
+[node name="Tree" parent="." index="28" unique_id=863964832 instance=ExtResource("8_0g6gi")]
+position = Vector2(80, 80)
+
+[node name="Crate" parent="." index="29" unique_id=1267371780 instance=ExtResource("9_v2r1a")]
+position = Vector2(0, 5)
