@@ -1,5 +1,76 @@
 [gd_scene format=3 uid="uid://blos7i6ax4484"]
 
-[node name="OptionsMenu" type="MarginContainer" unique_id=462490953]
-offset_right = 40.0
-offset_bottom = 40.0
+[ext_resource type="Theme" uid="uid://cdv0csb0dp43j" path="res://themes/menu_theme.tres" id="1_hm4m4"]
+[ext_resource type="Script" uid="uid://by7u5foeo5qet" path="res://scripts/options_menu.gd" id="2_3xsyx"]
+[ext_resource type="Texture2D" uid="uid://b02rbyhyc1gvu" path="res://sprites/rabbit-carrot-cover-art-no-title.png" id="2_lfjc7"]
+[ext_resource type="PackedScene" uid="uid://b3ywq4cn53b52" path="res://scenes/select_menu.tscn" id="3_3xsyx"]
+
+[node name="OptionsMenu" type="Control" unique_id=2014394168]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 96.0
+offset_bottom = 96.0
+theme = ExtResource("1_hm4m4")
+script = ExtResource("2_3xsyx")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1606540392]
+layout_mode = 0
+offset_right = 96.0
+offset_bottom = 96.0
+texture = ExtResource("2_lfjc7")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=520270693]
+layout_mode = 0
+offset_right = 96.0
+offset_bottom = 96.0
+color = Color(0, 0, 0, 0.65882355)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1190080096]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 88.0
+offset_bottom = 88.0
+theme_override_constants/separation = 7
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1062404102]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.23013663, 0.71742773, 0.83463305, 1)
+text = "Options"
+horizontal_alignment = 1
+
+[node name="SelectMenu" parent="VBoxContainer" unique_id=647501129 instance=ExtResource("3_3xsyx")]
+layout_mode = 2
+
+[node name="Music" type="Button" parent="VBoxContainer/SelectMenu" unique_id=472105155]
+custom_maximum_size = Vector2(65, -1)
+layout_mode = 2
+focus_mode = 0
+text = "music:  on"
+alignment = 0
+
+[node name="Sfx" type="Button" parent="VBoxContainer/SelectMenu" unique_id=1023220932]
+custom_maximum_size = Vector2(65, -1)
+layout_mode = 2
+focus_mode = 0
+text = "sfx:  on"
+alignment = 0
+
+[node name="Credits" type="Button" parent="VBoxContainer/SelectMenu" unique_id=1581970988]
+custom_maximum_size = Vector2(35, -1)
+layout_mode = 2
+focus_mode = 0
+text = "credits"
+alignment = 0
+
+[node name="GoBack" type="Button" parent="VBoxContainer/SelectMenu" unique_id=702472036]
+layout_mode = 2
+focus_mode = 0
+text = "go back"
+alignment = 0
+
+[connection signal="item_selected" from="VBoxContainer/SelectMenu" to="." method="_on_select_menu_item_selected"]
+[connection signal="pressed" from="VBoxContainer/SelectMenu/Music" to="." method="_on_music_pressed"]
+[connection signal="pressed" from="VBoxContainer/SelectMenu/Sfx" to="." method="_on_sfx_pressed"]
+[connection signal="pressed" from="VBoxContainer/SelectMenu/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="VBoxContainer/SelectMenu/GoBack" to="." method="_on_go_back_pressed"]
