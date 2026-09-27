@@ -1,7 +1,7 @@
 extends Control
 
 func fade_in():
-	$VBoxContainer/VBoxContainer/StageCompletedText.text = "stage %s completed" % str(Settings.level)
+	$VBoxContainer/VBoxContainer/StageCompletedText.text = "stage %s completed" % str(Settings.level-1)
 	var t = get_tree().create_tween()
 	t.set_ease(Tween.EASE_IN_OUT)
 	t.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)

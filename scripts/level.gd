@@ -87,7 +87,6 @@ func level_complete():
 	
 	if (Settings.level + 1 <= Gamemgr.get_amount_levels()):
 		Settings.level += 1
-	
 	var y = get_tree().create_tween()
 	y.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
 	y.tween_property(player, "modulate:a", 0, 1)
