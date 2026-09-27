@@ -16,6 +16,7 @@ tile_map_data = PackedByteArray("AAAFAAIAAQADAAUAAAAFAAMAAQADAAUAAAAFAAQAAQADAAU
 
 [node name="Player" parent="." index="3" unique_id=230875539]
 position = Vector2(16, 16)
+starting_direction = "south"
 
 [node name="Flower" parent="." index="6" unique_id=1568804945 instance=ExtResource("5_dywbp")]
 position = Vector2(64, 24)
