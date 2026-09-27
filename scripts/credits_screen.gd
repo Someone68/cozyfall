@@ -5,7 +5,8 @@ const names := ["potato, .rbird_", "potato, itstntcraft", "itstntcraft", ".rbird
 var i = 0
 
 func _ready() -> void:
-	$CreditsMusic.play()
+	if Settings.music:
+		$CreditsMusic.play()
 	$NameTimer.start()
 	$MarginContainer/VBoxContainer/Label.text = titles[i]
 	$MarginContainer/VBoxContainer/Label2.text = names[i]
