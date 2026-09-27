@@ -8,7 +8,6 @@ func _ready() -> void:
 		$MainMenu/SelectMenu.refresh()
 
 func show_warning(action: String) -> void:
-	#process_mode = Node.PROCESS_MODE_PAUSABLE
 	var loaded_warn_screen = WARN_SCREEN.instantiate()
 	loaded_warn_screen.warning_action = action
 	loaded_warn_screen.warning_text = """You will lose all

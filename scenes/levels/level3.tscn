@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://ccskmild8mi3c" path="res://scenes/bonfire.tscn" id="2_t275y"]
 [ext_resource type="PackedScene" uid="uid://df6i7mujmblk2" path="res://scenes/flower.tscn" id="3_f5jb5"]
 
-[node name="Level" unique_id=1064352627 instance=ExtResource("1_sru4k")]
+[node name="Level3" unique_id=1064352627 instance=ExtResource("1_sru4k")]
 TUNNELING_ENABLED = false
 
 [node name="Floor" parent="." index="0" unique_id=2117507599]

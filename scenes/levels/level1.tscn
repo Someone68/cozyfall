@@ -4,7 +4,7 @@
 [ext_resource type="Theme" uid="uid://cdv0csb0dp43j" path="res://themes/menu_theme.tres" id="3_dd0lh"]
 [ext_resource type="PackedScene" uid="uid://df6i7mujmblk2" path="res://scenes/flower.tscn" id="5_dywbp"]
 
-[node name="Level" unique_id=1064352627 instance=ExtResource("1_x6ivy")]
+[node name="Level1" unique_id=1064352627 instance=ExtResource("1_x6ivy")]
 TUNNELING_ENABLED = false
 TEMPERATURE_ENABLED = false
 

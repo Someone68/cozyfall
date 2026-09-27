@@ -5,8 +5,7 @@ extends Control
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_close_dialog"):
-		get_tree().paused = false
-		queue_free()
+		_on_back_to_game_pressed()
 
 func show_warning(action: String) -> void:
 	process_mode = Node.PROCESS_MODE_PAUSABLE

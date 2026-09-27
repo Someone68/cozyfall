@@ -5,11 +5,13 @@ const levels := [
 	"res://scenes/levels/level2.tscn",
 	"res://scenes/levels/level3.tscn",
 	"res://scenes/levels/level4.tscn",
+	"res://scenes/levels/level4_1.tscn",
 	"res://scenes/levels/level5.tscn",
 	"res://scenes/levels/level6.tscn",
 	"res://scenes/levels/level7.tscn",
+	"res://scenes/levels/level7_1.tscn",
 	"res://scenes/levels/level8.tscn",
-	"res://scenes/levels/end.tscn",
+	"res://scenes/levels/end.tscn"
 ]
 
 func load_current_level():

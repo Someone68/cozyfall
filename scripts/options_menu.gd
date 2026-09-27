@@ -2,6 +2,10 @@ extends Control
 
 var is_child := false
 
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_close_dialog"):
+		_on_go_back_pressed()
+
 func _on_select_menu_item_selected(index: int, item: Control) -> void:
 	match item.name:
 		"Music":
