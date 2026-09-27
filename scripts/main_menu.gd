@@ -4,8 +4,8 @@ extends Control
 
 func _ready() -> void:
 	if Settings.level == 1:
-		$MainMenu/VBoxContainer/SelectMenu/Continue.visible = false
-		$MainMenu/VBoxContainer/SelectMenu.refresh()
+		$MainMenu/SelectMenu/Continue.visible = false
+		$MainMenu/SelectMenu.refresh()
 
 func show_warning(action: String) -> void:
 	#process_mode = Node.PROCESS_MODE_PAUSABLE
@@ -21,6 +21,8 @@ func _on_select_menu_item_selected(_index: int, item: Control) -> void:
 			_on_continue_pressed()
 		"NewGame":
 			_on_start_pressed()
+		"Options":
+			_on_options_pressed()
 		"Quit":
 			_on_quit_pressed()
 
@@ -37,3 +39,6 @@ func _on_quit_pressed() -> void:
 
 func _on_continue_pressed() -> void:
 	Gamemgr.load_current_level()
+
+func _on_options_pressed() -> void:
+	Gamemgr.to_options()

@@ -28,3 +28,6 @@ func get_amount_levels() -> int:
 
 func back_to_menu():
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+
+func to_options():
+	get_tree().change_scene_to_file("res://scenes/options_menu.tscn")
