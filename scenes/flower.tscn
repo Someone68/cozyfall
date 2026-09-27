@@ -8,6 +8,6 @@ z_index = 1
 script = ExtResource("1_yoh7s")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=403036718]
-position = Vector2(1, -3)
+position = Vector2(0, -3)
 texture = ExtResource("1_8x8dx")
 centered = false
