@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b045hc6ppgd2u" path="res://scenes/brickwalls.tscn" id="6_jyre1"]
 [ext_resource type="PackedScene" uid="uid://bywris2cmufxx" path="res://scenes/player.tscn" id="7_lp2ca"]
 [ext_resource type="Texture2D" uid="uid://bqx21ud32uve8" path="res://sprites/coldbar.png" id="9_p62il"]
+[ext_resource type="PackedScene" uid="uid://cgiabr2ia60m1" path="res://scenes/border.tscn" id="10_rmjfq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_klq6b"]
 atlas = ExtResource("9_p62il")
@@ -144,6 +145,9 @@ scale = Vector2(1, 0.5)
 sprite_frames = SubResource("SpriteFrames_1eln1")
 animation = &"normal"
 centered = false
+
+[node name="Border" parent="." unique_id=2002029741 instance=ExtResource("10_rmjfq")]
+z_index = 4
 
 [node name="WhiteFade" type="ColorRect" parent="." unique_id=1353560723]
 visible = false

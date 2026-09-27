@@ -18,6 +18,9 @@ var floors := {}
 var bonfires := {}
 var on_bonfire := false
 
+func _ready() -> void:
+	$Border.visible = false
+
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_close_dialog") and !has_node("EscapeScreen") and !has_node("DeathScreen"):
 		var loaded_escape_screen = ESCAPE_SCREEN.instantiate()
@@ -101,7 +104,6 @@ func level_complete():
 		loaded_win_screen.fade_in()
 	)
 	t.tween_property($WhiteFade, "modulate:a", 0.0, 1)
-	
 
 func _on_player_arrived():
 	var pos = player.grid_pos
@@ -122,6 +124,17 @@ func _on_player_arrived():
 		on_bonfire = false
 	
 	player.after_move()
+	
+	if (player.temperature <= 2):
+		$Border.visible = true
+		if (player.temperature == 2):
+			$Border/AnimatedSprite2D.set_frame(0)
+		if (player.temperature == 1):
+			$Border/AnimatedSprite2D.set_frame(1)
+		if (player.temperature == 0):
+			$Border/AnimatedSprite2D.set_frame(2)
+	else:
+		$Border.visible = false
 
 func set_statusbar(temperature : int):
 	var coldness = 8 - temperature
