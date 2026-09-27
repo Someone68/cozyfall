@@ -23,10 +23,10 @@ to restore warmth"
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="Floor" index="1" unique_id=278540677]
-offset_left = 33.0
-offset_top = 77.0
-offset_right = 96.0
-offset_bottom = 100.0
+offset_left = 34.0
+offset_top = 76.0
+offset_right = 97.0
+offset_bottom = 99.0
 theme = ExtResource("2_f5jb5")
 theme_override_constants/line_spacing = 0
 text = "if you're too cold,
