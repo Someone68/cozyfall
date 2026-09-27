@@ -5,5 +5,5 @@
 
 [node name="Music" type="AudioStreamPlayer" unique_id=1231220946]
 stream = ExtResource("1_05ggv")
-script = ExtResource("2_05ggv")
 volume_db = -15.0
+script = ExtResource("2_05ggv")
