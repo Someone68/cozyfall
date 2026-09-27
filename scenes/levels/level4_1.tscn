@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cpiphle12k0cp" path="res://scenes/button.tscn" id="5_g4qpo"]
 [ext_resource type="AudioStream" uid="uid://dn85u1krkbigw" path="res://sounds/level_complete (1).wav" id="5_oqe2k"]
 [ext_resource type="PackedScene" uid="uid://qcllx1lqfgx4" path="res://scenes/door.tscn" id="6_0nnbt"]
+[ext_resource type="PackedScene" uid="uid://cckfdlry2xpmq" path="res://scenes/tree.tscn" id="8_tbiru"]
 
 [node name="Level4_1" unique_id=1064352627 instance=ExtResource("1_t031a")]
 
@@ -54,3 +55,9 @@ theme_override_constants/line_spacing = 0
 text = "brick walls go
 deep underground"
 horizontal_alignment = 1
+
+[node name="Tree" parent="." index="14" unique_id=863964832 instance=ExtResource("8_tbiru")]
+position = Vector2(16, 64)
+
+[node name="Tree2" parent="." index="15" unique_id=730439713 instance=ExtResource("8_tbiru")]
+position = Vector2(72, 72)

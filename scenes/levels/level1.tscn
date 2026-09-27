@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cyhs4soon2el5" path="res://scenes/levels/level.tscn" id="1_x6ivy"]
 [ext_resource type="Theme" uid="uid://cdv0csb0dp43j" path="res://themes/menu_theme.tres" id="3_dd0lh"]
+[ext_resource type="PackedScene" uid="uid://cckfdlry2xpmq" path="res://scenes/tree.tscn" id="4_bfxgj"]
 [ext_resource type="PackedScene" uid="uid://df6i7mujmblk2" path="res://scenes/flower.tscn" id="5_dywbp"]
 
 [node name="Level1" unique_id=1064352627 instance=ExtResource("1_x6ivy")]
@@ -26,7 +27,17 @@ offset_top = 76.0
 offset_right = 96.0
 offset_bottom = 99.0
 theme = ExtResource("3_dd0lh")
+theme_override_colors/font_color = Color(0.96035105, 0.96035105, 0.96035093, 1)
 theme_override_constants/line_spacing = 0
 text = "head to the flower to 
 complete the level"
 horizontal_alignment = 1
+
+[node name="Tree" parent="." index="11" unique_id=863964832 instance=ExtResource("4_bfxgj")]
+position = Vector2(80, 16)
+
+[node name="Tree2" parent="." index="12" unique_id=2000495287 instance=ExtResource("4_bfxgj")]
+position = Vector2(8, 48)
+
+[node name="Tree3" parent="." index="13" unique_id=201611353 instance=ExtResource("4_bfxgj")]
+position = Vector2(72, 72)

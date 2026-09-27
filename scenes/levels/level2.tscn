@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cpiphle12k0cp" path="res://scenes/button.tscn" id="3_niitk"]
 [ext_resource type="PackedScene" uid="uid://df6i7mujmblk2" path="res://scenes/flower.tscn" id="4_niitk"]
 [ext_resource type="Theme" uid="uid://cdv0csb0dp43j" path="res://themes/menu_theme.tres" id="5_d5djh"]
+[ext_resource type="PackedScene" uid="uid://cckfdlry2xpmq" path="res://scenes/tree.tscn" id="6_ok6xr"]
 
 [node name="Level2" unique_id=1064352627 instance=ExtResource("1_e0cvd")]
 TUNNELING_ENABLED = false
@@ -39,11 +40,15 @@ variant = 1
 position = Vector2(16, 56)
 
 [node name="Label" type="Label" parent="." index="10" unique_id=947927641]
-offset_top = 76.0
+offset_top = 78.0
 offset_right = 96.0
-offset_bottom = 99.0
+offset_bottom = 101.0
 theme = ExtResource("5_d5djh")
+theme_override_colors/font_color = Color(0.9607843, 0.9607843, 0.9607843, 1)
 theme_override_constants/line_spacing = 0
 text = "I wonder how you
 can open that door..."
 horizontal_alignment = 1
+
+[node name="Tree" parent="." index="14" unique_id=863964832 instance=ExtResource("6_ok6xr")]
+position = Vector2(72, 16)
