@@ -2,6 +2,10 @@
 
 [ext_resource type="Script" uid="uid://btaqfm32mplau" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://cx1df8p13focj" path="res://sprites/rabbit_spritesheet.png" id="2_g2els"]
+[ext_resource type="AudioStream" uid="uid://ogukpyggrwtm" path="res://sounds/jump.wav" id="3_qhqgy"]
+[ext_resource type="AudioStream" uid="uid://6opscq1168ag" path="res://sounds/freeze.wav" id="3_tuyoq"]
+[ext_resource type="AudioStream" uid="uid://prmedlkj1tnj" path="res://sounds/death.wav" id="4_fjrip"]
+[ext_resource type="AudioStream" uid="uid://bfuvk2pckmovu" path="res://sounds/eat_carrot (2).wav" id="5_smehm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qhqgy"]
 atlas = ExtResource("2_g2els")
@@ -1042,6 +1046,12 @@ animations = [{
 "speed": 13.0
 }]
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_dqkch"]
+playback_mode = 1
+random_pitch = 1.1095694
+streams_count = 1
+stream_0/stream = ExtResource("3_qhqgy")
+
 [node name="Player" type="Node2D" unique_id=230875539]
 script = ExtResource("1_g2els")
 
@@ -1053,5 +1063,17 @@ animation = &"down_idle"
 [node name="MovementCooldown" type="Timer" parent="." unique_id=1586735100]
 wait_time = 0.08
 one_shot = true
+
+[node name="DeathFreeze" type="AudioStreamPlayer" parent="." unique_id=160694435]
+stream = ExtResource("3_tuyoq")
+
+[node name="DeathSpike" type="AudioStreamPlayer" parent="." unique_id=946911354]
+stream = ExtResource("4_fjrip")
+
+[node name="EatCarrot" type="AudioStreamPlayer" parent="." unique_id=1242558766]
+stream = ExtResource("5_smehm")
+
+[node name="Jump" type="AudioStreamPlayer" parent="." unique_id=38972655]
+stream = SubResource("AudioStreamRandomizer_dqkch")
 
 [connection signal="timeout" from="MovementCooldown" to="." method="_on_movement_cooldown_timeout"]

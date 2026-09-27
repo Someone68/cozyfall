@@ -10,6 +10,7 @@ func _ready() -> void:
 
 func on_enter(player: Node2D):
 	player.temperature = player.MAX_TEMPERATURE
-	print("bonfire, lit: " + str(lit))
+	if (not lit): $Fire1.play()
+	else: $Fire2.play()
 	lit = true
 	$AnimatedSprite2D.play("lit")

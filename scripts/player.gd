@@ -46,6 +46,8 @@ func die(spike := false):
 	if (dead == true): return
 	print("die")
 	dead = true
+	if (spike): $DeathSpike.play()
+	else: $DeathFreeze.play()
 	$AnimatedSprite2D.play("die" + ("_spike" if spike else ""))
 	await $AnimatedSprite2D.animation_finished
 	print("dead")
@@ -133,6 +135,7 @@ func try_move(dir: Vector2i) -> bool:
 	if dir.y != 0 and can_move == "x": return false
 	if not level.can_occupy(grid_pos + dir): return false
 	direction = dir
+	$Jump.play()
 	play_anim()
 	#level.save_state()
 	move_cooldown = true

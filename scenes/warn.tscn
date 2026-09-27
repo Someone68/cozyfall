@@ -76,12 +76,14 @@ layout_mode = 2
 theme_override_constants/separation = 2
 
 [node name="GoBack" type="Button" parent="MarginContainer/MarginContainer/VBoxContainer/VBoxContainer/SelectMenu" unique_id=1014827972]
+focus_mode = 0
 custom_maximum_size = Vector2(40, -1)
 layout_mode = 2
 text = "go back"
 alignment = 0
 
 [node name="Continue" type="Button" parent="MarginContainer/MarginContainer/VBoxContainer/VBoxContainer/SelectMenu" unique_id=1188927645]
+focus_mode = 0
 custom_maximum_size = Vector2(40, -1)
 layout_mode = 2
 text = "continue"

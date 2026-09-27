@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://0waafp0s27mk" path="res://scripts/bonfire.gd" id="1_xk3wp"]
 [ext_resource type="Texture2D" uid="uid://dj3dt5bm0jlsl" path="res://sprites/bonfire_spritesheet.png" id="2_xk3wp"]
+[ext_resource type="AudioStream" uid="uid://cghlfuaqd4htr" path="res://sounds/fire.wav" id="3_jmhiw"]
+[ext_resource type="AudioStream" uid="uid://ep7gjjc40306" path="res://sounds/fire_2.wav" id="4_8aldm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jmhiw"]
 atlas = ExtResource("2_xk3wp")
@@ -55,3 +57,9 @@ animation = &"lit"
 autoplay = "lit"
 frame_progress = 0.46631652
 centered = false
+
+[node name="Fire1" type="AudioStreamPlayer" parent="." unique_id=820102374]
+stream = ExtResource("3_jmhiw")
+
+[node name="Fire2" type="AudioStreamPlayer" parent="." unique_id=1712980966]
+stream = ExtResource("4_8aldm")

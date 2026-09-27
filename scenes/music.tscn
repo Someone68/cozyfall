@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://bh2my5m0852s1"]
 
 [ext_resource type="AudioStream" uid="uid://7scb3degv54l" path="res://sounds/cozy_fall_type_beat.wav" id="1_05ggv"]
+[ext_resource type="Script" uid="uid://ftnlgr2opf6l" path="res://scripts/music.gd" id="2_05ggv"]
 
 [node name="Music" type="AudioStreamPlayer" unique_id=1231220946]
 stream = ExtResource("1_05ggv")
+script = ExtResource("2_05ggv")
 volume_db = -15.0

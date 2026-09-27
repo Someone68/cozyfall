@@ -43,26 +43,30 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Continue" type="Button" parent="MainMenu/VBoxContainer/CenterContainer/SelectMenu" unique_id=615869429]
+focus_mode = 0
 layout_mode = 2
 text = "continue"
 flat = true
 
 [node name="NewGame" type="Button" parent="MainMenu/VBoxContainer/CenterContainer/SelectMenu" unique_id=1531426439]
+focus_mode = 0
 layout_mode = 2
 text = "new game"
 flat = true
 
 [node name="Options" type="Button" parent="MainMenu/VBoxContainer/CenterContainer/SelectMenu" unique_id=578380013]
+focus_mode = 0
 layout_mode = 2
 text = "options"
 flat = true
 
 [node name="Quit" type="Button" parent="MainMenu/VBoxContainer/CenterContainer/SelectMenu" unique_id=1581533968]
+focus_mode = 0
 layout_mode = 2
 text = "quit game"
 flat = true
 
 [connection signal="item_selected" from="MainMenu/VBoxContainer/CenterContainer/SelectMenu" to="." method="_on_select_menu_item_selected"]
-[connection signal="pressed" from="MainMenu/VBoxContainer/CenterContainer/SelectMenu/Continue" to="MainMenu" method="_on_continue_pressed"]
-[connection signal="pressed" from="MainMenu/VBoxContainer/CenterContainer/SelectMenu/NewGame" to="MainMenu" method="_on_start_pressed"]
-[connection signal="pressed" from="MainMenu/VBoxContainer/CenterContainer/SelectMenu/Quit" to="MainMenu" method="_on_quit_pressed"]
+[connection signal="pressed" from="MainMenu/VBoxContainer/CenterContainer/SelectMenu/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="MainMenu/VBoxContainer/CenterContainer/SelectMenu/NewGame" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="MainMenu/VBoxContainer/CenterContainer/SelectMenu/Quit" to="." method="_on_quit_pressed"]

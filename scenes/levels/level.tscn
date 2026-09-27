@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bywris2cmufxx" path="res://scenes/player.tscn" id="7_lp2ca"]
 [ext_resource type="Texture2D" uid="uid://bqx21ud32uve8" path="res://sprites/coldbar.png" id="9_p62il"]
 [ext_resource type="PackedScene" uid="uid://cgiabr2ia60m1" path="res://scenes/border.tscn" id="10_rmjfq"]
+[ext_resource type="AudioStream" uid="uid://ca37424pmokej" path="res://sounds/level_complete.wav" id="11_7pb6i"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_klq6b"]
 atlas = ExtResource("9_p62il")
@@ -133,7 +134,6 @@ tile_map_data = PackedByteArray()
 [node name="Walls" parent="." unique_id=1423184826 instance=ExtResource("5_qhnmj")]
 
 [node name="BrickWalls" parent="." unique_id=856379871 instance=ExtResource("6_jyre1")]
-y_sort_enabled = true
 
 [node name="Player" parent="." unique_id=230875539 instance=ExtResource("7_lp2ca")]
 z_index = 1
@@ -155,5 +155,9 @@ modulate = Color(1, 1, 1, 0)
 z_index = 5
 offset_right = 96.0
 offset_bottom = 96.0
+
+[node name="WinSound" type="AudioStreamPlayer" parent="." unique_id=1514011327]
+process_mode = 3
+stream = ExtResource("11_7pb6i")
 
 [connection signal="move_finished" from="Player" to="." method="_on_player_arrived"]

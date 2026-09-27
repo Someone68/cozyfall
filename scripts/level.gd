@@ -87,6 +87,7 @@ func move_player(dir: Vector2i) -> bool:
 func level_complete():
 	var loaded_win_screen = WIN_SCREEN.instantiate()
 	$WhiteFade.visible = true
+	$WinSound.play()
 	get_tree().paused = true
 	
 	if (Settings.level + 1 <= Gamemgr.get_amount_levels()):
