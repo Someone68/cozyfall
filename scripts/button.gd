@@ -10,6 +10,8 @@ func _ready() -> void:
 
 func on_enter(player: Node2D):
 	print("pressed")
+	if (!pressed):
+		$Press.play()
 	pressed = true
 	$AnimatedSprite2D.set_animation("on")
 	$AnimatedSprite2D.set_frame(variant)

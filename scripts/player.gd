@@ -76,6 +76,7 @@ func tunnel():
 	if dead or tunneling or can_move != "all": return
 	if not level.is_tunnelable(grid_pos): return
 	tunneling = true
+	$TunnelIn.play()
 	play_anim("_tunnel_in")
 	await $AnimatedSprite2D.animation_finished
 	var target := grid_pos + direction * 3
@@ -86,6 +87,7 @@ func tunnel():
 		grid_pos = target
 		position = Vector2(target * TILE)
 	play_anim("_tunnel_out")
+	$TunnelOut.play()
 	await $AnimatedSprite2D.animation_finished
 	tunneling = false
 	play_anim("_idle")

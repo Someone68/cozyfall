@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://ctfobhmnb2v3j"]
+
+[ext_resource type="Script" uid="uid://c8utvvapk7akd" path="res://scripts/carrot.gd" id="1_elckd"]
+[ext_resource type="Texture2D" uid="uid://q02665k1x2al" path="res://sprites/carrot_spritesheet.png" id="2_mb1r7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o8o3c"]
+atlas = ExtResource("2_mb1r7")
+region = Rect2(0, 0, 12, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4t6nh"]
+atlas = ExtResource("2_mb1r7")
+region = Rect2(12, 0, 12, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l17d2"]
+atlas = ExtResource("2_mb1r7")
+region = Rect2(24, 0, 12, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uognc"]
+atlas = ExtResource("2_mb1r7")
+region = Rect2(36, 0, 12, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ljbf"]
+atlas = ExtResource("2_mb1r7")
+region = Rect2(48, 0, 12, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ug22x"]
+atlas = ExtResource("2_mb1r7")
+region = Rect2(60, 0, 12, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eapjj"]
+atlas = ExtResource("2_mb1r7")
+region = Rect2(72, 0, 12, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fnjne"]
+atlas = ExtResource("2_mb1r7")
+region = Rect2(84, 0, 12, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1eln1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o8o3c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4t6nh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l17d2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uognc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ljbf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ug22x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eapjj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fnjne")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 3.0
+}]
+
+[node name="Carrot" type="Node2D" unique_id=1793681335]
+z_index = 1
+script = ExtResource("1_elckd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1800801601]
+position = Vector2(-2, -8)
+sprite_frames = SubResource("SpriteFrames_1eln1")
+autoplay = "default"
+frame = 2
+frame_progress = 0.32251024
+centered = false

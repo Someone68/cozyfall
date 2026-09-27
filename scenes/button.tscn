@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c8mfbrdw783v7" path="res://scripts/button.gd" id="1_3q610"]
 [ext_resource type="Texture2D" uid="uid://ntf3s2ns4bdf" path="res://sprites/buttons.png" id="2_rhj8v"]
+[ext_resource type="AudioStream" uid="uid://cl2jg0siggt3a" path="res://sounds/button_press.wav" id="3_3q610"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3q610"]
 atlas = ExtResource("2_rhj8v")
@@ -79,3 +80,6 @@ script = ExtResource("1_3q610")
 position = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_1eln1")
 animation = &"off"
+
+[node name="Press" type="AudioStreamPlayer" parent="." unique_id=412214108]
+stream = ExtResource("3_3q610")
