@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://df6i7mujmblk2" path="res://scenes/flower.tscn" id="4_lsgss"]
 [ext_resource type="PackedScene" uid="uid://db3v2cdf2btf2" path="res://scenes/trapped_floor.tscn" id="5_sd6f7"]
 [ext_resource type="PackedScene" uid="uid://7t5f6535bd8q" path="res://scenes/ice.tscn" id="6_vnf24"]
-[ext_resource type="Theme" uid="uid://cdv0csb0dp43j" path="res://themes/menu_theme.tres" id="7_pm1y0"]
 
 [node name="Level" unique_id=1064352627 instance=ExtResource("1_qsj6i")]
 
@@ -40,12 +39,3 @@ position = Vector2(48, 72)
 
 [node name="Ice3" parent="." index="12" unique_id=338170932 instance=ExtResource("6_vnf24")]
 position = Vector2(48, 8)
-
-[node name="Label" type="Label" parent="." index="13" unique_id=661924032]
-offset_top = 84.0
-offset_right = 96.0
-offset_bottom = 107.0
-theme = ExtResource("7_pm1y0")
-theme_override_constants/line_spacing = 0
-text = "click z to tunnel!"
-horizontal_alignment = 1
