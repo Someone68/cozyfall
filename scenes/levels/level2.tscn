@@ -43,6 +43,6 @@ offset_right = 96.0
 offset_bottom = 99.0
 theme = ExtResource("5_d5djh")
 theme_override_constants/line_spacing = 0
-text = "step on the button to
-open the door"
+text = "I wonder how you
+can open that door..."
 horizontal_alignment = 1

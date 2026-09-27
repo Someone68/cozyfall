@@ -48,7 +48,10 @@ func die(spike := false):
 	$AnimatedSprite2D.play("die" + ("_spike" if spike else ""))
 	await $AnimatedSprite2D.animation_finished
 	print("dead")
-	level.death()
+	if spike:
+		level.death("you stepped on legos!")
+	else:
+		level.death("you froze to death!")
 	queue_free()
 
 func _unhandled_input(event: InputEvent) -> void:

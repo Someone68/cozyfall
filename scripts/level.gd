@@ -34,8 +34,9 @@ func is_tunnelable(pos: Vector2i) -> bool:
 	var f = floors.get(pos)
 	return not (f and "no_tunnel" in f and f.no_tunnel)
 
-func death():
+func death(reason):
 	var loaded_death_screen = DEATH_SCREEN.instantiate()
+	loaded_death_screen.death_reason = reason
 	add_child(loaded_death_screen)
 	get_tree().paused = true
 

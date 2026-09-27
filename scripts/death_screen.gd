@@ -1,5 +1,10 @@
 extends Control
 
+var death_reason := "you can do better..."
+
+func _ready() -> void:
+	$VBoxContainer/Label.text = death_reason
+
 func _on_select_menu_item_selected(_index: int, item: Control) -> void:
 	match item.name:
 		"TryAgain":
