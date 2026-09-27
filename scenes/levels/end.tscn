@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cyhs4soon2el5" path="res://scenes/levels/level.tscn" id="1_5bcbc"]
 [ext_resource type="PackedScene" uid="uid://ctfobhmnb2v3j" path="res://scenes/carrot.tscn" id="2_fb5ls"]
+[ext_resource type="PackedScene" uid="uid://cckfdlry2xpmq" path="res://scenes/tree.tscn" id="3_8v4vh"]
 
 [node name="Level" unique_id=1064352627 instance=ExtResource("1_5bcbc")]
 TUNNELING_ENABLED = false
@@ -25,3 +26,21 @@ position = Vector2(48, 24)
 
 [node name="EatCarrot" parent="." index="9" unique_id=2062713001]
 bus = &"Master"
+
+[node name="Tree" parent="." index="10" unique_id=863964832 instance=ExtResource("3_8v4vh")]
+position = Vector2(16, 72)
+
+[node name="Tree2" parent="." index="11" unique_id=337402276 instance=ExtResource("3_8v4vh")]
+position = Vector2(16, 48)
+
+[node name="Tree3" parent="." index="12" unique_id=1855998394 instance=ExtResource("3_8v4vh")]
+position = Vector2(16, 24)
+
+[node name="Tree4" parent="." index="13" unique_id=728166668 instance=ExtResource("3_8v4vh")]
+position = Vector2(80, 24)
+
+[node name="Tree5" parent="." index="14" unique_id=597717447 instance=ExtResource("3_8v4vh")]
+position = Vector2(80, 48)
+
+[node name="Tree6" parent="." index="15" unique_id=464413673 instance=ExtResource("3_8v4vh")]
+position = Vector2(80, 72)
