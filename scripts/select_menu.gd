@@ -30,6 +30,7 @@ func _unhandled_input(event):
 	elif event.is_action_pressed("ui_up"):
 		_move(-1, items.size())
 	elif event.is_action_pressed("ui_accept"):
+		UiBeep.play()
 		item_selected.emit(index, items[index])
 	else:
 		return

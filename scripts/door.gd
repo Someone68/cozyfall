@@ -3,7 +3,7 @@ var grid_pos: Vector2i
 @onready var level = owner
 
 @export var id = ""
-@export_enum("Red:0", "Blue:1", "Yellow:2", "Green:3") var variant := 0
+@export_enum("Red:0", "Blue:1", "Yellow:2", "Green:3", "Gray:4", "Tan:5") var variant := 0
 
 func _ready():
 	grid_pos = Vector2i(position / level.TILE)

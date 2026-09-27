@@ -10,4 +10,5 @@ func on_enter(player: Node2D):
 
 func on_leave(_player: Node2D):
 	on = true
+	$Activate.play()
 	$AnimatedSprite2D.play("on")

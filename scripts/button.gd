@@ -1,6 +1,6 @@
 extends FloorEntity
 @export var door_id := ""
-@export_enum("Red:0", "Blue:1", "Yellow:2", "Green:3") var variant := 0
+@export_enum("Red:0", "Blue:1", "Yellow:2", "Green:3", "Gray:4", "Tan:5") var variant := 0
 var pressed := false
 
 func _ready() -> void:

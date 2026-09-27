@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dtgl26h1rd6xy" path="res://scripts/trapped_floor.gd" id="1_25wkb"]
 [ext_resource type="Texture2D" uid="uid://0mjjscpdleo0" path="res://sprites/spikes.png" id="1_dooj0"]
+[ext_resource type="AudioStream" uid="uid://de4r1ukylxl6j" path="res://sounds/spike_popping_out.wav" id="3_5i53w"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_25wkb"]
 atlas = ExtResource("1_dooj0")
@@ -37,3 +38,6 @@ script = ExtResource("1_25wkb")
 sprite_frames = SubResource("SpriteFrames_1eln1")
 animation = &"off"
 centered = false
+
+[node name="Activate" type="AudioStreamPlayer" parent="." unique_id=930885341]
+stream = ExtResource("3_5i53w")

@@ -20,6 +20,14 @@ region = Rect2(0, 12, 6, 6)
 atlas = ExtResource("2_rhj8v")
 region = Rect2(0, 18, 6, 6)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_8r4pl"]
+atlas = ExtResource("2_rhj8v")
+region = Rect2(0, 24, 6, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s0xya"]
+atlas = ExtResource("2_rhj8v")
+region = Rect2(0, 30, 6, 6)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_t81cg"]
 atlas = ExtResource("2_rhj8v")
 region = Rect2(6, 0, 6, 6)
@@ -36,6 +44,14 @@ region = Rect2(6, 12, 6, 6)
 atlas = ExtResource("2_rhj8v")
 region = Rect2(6, 18, 6, 6)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_6tupn"]
+atlas = ExtResource("2_rhj8v")
+region = Rect2(6, 24, 6, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dogef"]
+atlas = ExtResource("2_rhj8v")
+region = Rect2(6, 30, 6, 6)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_1eln1"]
 animations = [{
 "frames": [{
@@ -50,6 +66,12 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8m7bo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8r4pl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s0xya")
 }],
 "loop": 0,
 "name": &"off",
@@ -67,6 +89,12 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jkx8l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6tupn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dogef")
 }],
 "loop": 0,
 "name": &"on",
@@ -79,7 +107,7 @@ script = ExtResource("1_3q610")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1837639633]
 position = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_1eln1")
-animation = &"off"
+animation = &"on"
 
 [node name="Press" type="AudioStreamPlayer" parent="." unique_id=412214108]
 stream = ExtResource("3_3q610")
