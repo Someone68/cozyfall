@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://h8gio2t1gepg"]
+
+[ext_resource type="Theme" uid="uid://cdv0csb0dp43j" path="res://themes/menu_theme.tres" id="1_ab1x3"]
+[ext_resource type="Script" uid="uid://cwtj7g46ojkgd" path="res://scripts/carrot_eaten.gd" id="1_yow43"]
+[ext_resource type="AudioStream" uid="uid://dt5npwecq045s" path="res://sounds/menu_select.wav" id="3_lvnbr"]
+
+[node name="CarrotEaten" type="Control" unique_id=1075557409]
+process_mode = 3
+z_index = 10
+layout_mode = 3
+anchors_preset = 0
+offset_right = 96.0
+offset_bottom = 96.0
+offset_transform_pivot_ratio = Vector2(0, 0)
+theme = ExtResource("1_ab1x3")
+script = ExtResource("1_yow43")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1503140725]
+layout_mode = 1
+offset_right = 96.0
+offset_bottom = 96.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="." unique_id=1735519503]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -0.5
+offset_top = -11.5
+offset_right = 0.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Beep" type="AudioStreamPlayer" parent="." unique_id=639546955]
+stream = ExtResource("3_lvnbr")

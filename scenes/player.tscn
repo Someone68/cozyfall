@@ -6,6 +6,8 @@
 [ext_resource type="AudioStream" uid="uid://6opscq1168ag" path="res://sounds/freeze.wav" id="3_tuyoq"]
 [ext_resource type="AudioStream" uid="uid://prmedlkj1tnj" path="res://sounds/death.wav" id="4_fjrip"]
 [ext_resource type="AudioStream" uid="uid://bfuvk2pckmovu" path="res://sounds/eat_carrot (2).wav" id="5_smehm"]
+[ext_resource type="AudioStream" uid="uid://bfxugrto841sp" path="res://sounds/tunnel_in.wav" id="7_fjrip"]
+[ext_resource type="AudioStream" uid="uid://bdc0mi7nfyhur" path="res://sounds/tunnel_out.wav" id="8_smehm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qhqgy"]
 atlas = ExtResource("2_g2els")
@@ -1075,5 +1077,11 @@ stream = ExtResource("5_smehm")
 
 [node name="Jump" type="AudioStreamPlayer" parent="." unique_id=38972655]
 stream = SubResource("AudioStreamRandomizer_dqkch")
+
+[node name="TunnelIn" type="AudioStreamPlayer" parent="." unique_id=2096645314]
+stream = ExtResource("7_fjrip")
+
+[node name="TunnelOut" type="AudioStreamPlayer" parent="." unique_id=1741338834]
+stream = ExtResource("8_smehm")
 
 [connection signal="timeout" from="MovementCooldown" to="." method="_on_movement_cooldown_timeout"]

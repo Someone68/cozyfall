@@ -6,6 +6,7 @@ const ADJ_DIRS := [Vector2i(1, 0), Vector2i(-1, 0), Vector2i(0, 1), Vector2i(0, 
 @export var DEATH_SCREEN : PackedScene
 @export var WIN_SCREEN : PackedScene
 @export var ESCAPE_SCREEN : PackedScene
+@export var CARROT_SCREEN : PackedScene
 @export var TUNNELING_ENABLED := true
 @export var TEMPERATURE_ENABLED := true
 
@@ -147,6 +148,13 @@ func set_statusbar(temperature : int):
 		$StatusBar.set_frame(coldness)
 	elif(coldness == 8):
 		$StatusBar.play("full")
+
+func carrot_eat():
+	var loaded_carrot_screen = CARROT_SCREEN.instantiate()
+	$EatCarrot.play()
+	add_child(loaded_carrot_screen)
+	get_tree().paused = true
+	
 
 func init_player(_dir: Vector2i):
 	player.position = Vector2(player.grid_pos * TILE)

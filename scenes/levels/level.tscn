@@ -6,11 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://xm7nsaofr3fu" path="res://scenes/level_complete.tscn" id="3_icy5c"]
 [ext_resource type="PackedScene" uid="uid://bltyo261onn8b" path="res://scenes/floor.tscn" id="4_b8j7q"]
 [ext_resource type="PackedScene" uid="uid://caots4u2856ek" path="res://scenes/walls.tscn" id="5_qhnmj"]
+[ext_resource type="PackedScene" uid="uid://h8gio2t1gepg" path="res://scenes/carrot_eaten.tscn" id="5_xfk5q"]
 [ext_resource type="PackedScene" uid="uid://b045hc6ppgd2u" path="res://scenes/brickwalls.tscn" id="6_jyre1"]
 [ext_resource type="PackedScene" uid="uid://bywris2cmufxx" path="res://scenes/player.tscn" id="7_lp2ca"]
 [ext_resource type="Texture2D" uid="uid://bqx21ud32uve8" path="res://sprites/coldbar.png" id="9_p62il"]
 [ext_resource type="PackedScene" uid="uid://cgiabr2ia60m1" path="res://scenes/border.tscn" id="10_rmjfq"]
 [ext_resource type="AudioStream" uid="uid://ca37424pmokej" path="res://sounds/level_complete.wav" id="11_7pb6i"]
+[ext_resource type="AudioStream" uid="uid://bfuvk2pckmovu" path="res://sounds/eat_carrot (2).wav" id="13_qogh7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_klq6b"]
 atlas = ExtResource("9_p62il")
@@ -127,6 +129,7 @@ script = ExtResource("1_8iyoh")
 DEATH_SCREEN = ExtResource("2_mq31s")
 WIN_SCREEN = ExtResource("3_icy5c")
 ESCAPE_SCREEN = ExtResource("3_5mi6g")
+CARROT_SCREEN = ExtResource("5_xfk5q")
 
 [node name="Floor" parent="." unique_id=2117507599 instance=ExtResource("4_b8j7q")]
 tile_map_data = PackedByteArray()
@@ -159,5 +162,9 @@ offset_bottom = 96.0
 [node name="WinSound" type="AudioStreamPlayer" parent="." unique_id=1514011327]
 process_mode = 3
 stream = ExtResource("11_7pb6i")
+
+[node name="EatCarrot" type="AudioStreamPlayer" parent="." unique_id=2062713001]
+process_mode = 3
+stream = ExtResource("13_qogh7")
 
 [connection signal="move_finished" from="Player" to="." method="_on_player_arrived"]
